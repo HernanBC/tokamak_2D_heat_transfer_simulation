@@ -3,7 +3,7 @@
 
 &emsp;En esta sección van a estar las propiedades termofísicas, las ecuaciones de transferencia de calor y condiciones de refrigeración que necesitemos para desarrollar el modelo térmico 2D del tokamak con parámetros de referencia del ITER.
 
-&emsp;La información se organiza para que luego se implemente en C++, con datos de ITER Organization, artículos científicos que encontré, el NRL Plasma Formulary y bibliografía de transferencia de calor.
+&emsp;La información se organiza para que luego se implemente en el código, con datos de ITER Organization, artículos científicos que encontré, el NRL Plasma Formulary y bibliografía de heat transferencie.
 
 &emsp;Para la primera simulación como vamos a considerar un modelo estacionario, sin movimiento macroscópico del plasma, con calentamiento óhmico y pérdidas radiativas por bremsstrahlung. Se va a emplear una temperatura común para los electrones e iones (quedando pendiente definir si varía espacialmente)
 
