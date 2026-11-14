@@ -305,4 +305,5 @@ https://webbook.nist.gov/chemistry/fluid/
 
 Çengel, Y. A., & Ghajar, A. J. (2020). *Heat and Mass Transfer: Fundamentals & Applications* (6th ed.). McGraw-Hill. Capítulos 6 y 8.
 
+$$q = \frac{Q}{A}$$
 
