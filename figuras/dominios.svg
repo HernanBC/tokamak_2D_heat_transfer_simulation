@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="530" height="675" viewBox="0 0 530 675"
+     preserveAspectRatio="xMidYMid meet"
+     role="img" aria-labelledby="titulo descripcion">
+
+    <title id="titulo">Corte poloidal del tokamak en el plano R–Z</title>
+    <desc id="descripcion">
+        La primera pared y el divertor siguen los contornos de entrada del proyecto.
+        La separatriz y las superficies magnéticas son esquemáticas. El punto X
+        está en la parte inferior, donde se cruzan las ramas de la separatriz.
+        Los dos ejes tienen la misma escala en metros.
+    </desc>
+
+    <defs>
+        <style>
+            text {
+            font-family: Arial, Helvetica, sans-serif;
+            fill: #202a33;
+            }
+            .marca { font-size: 13px; fill: #52606b; }
+            .eje { font-size: 17px; font-style: italic; }
+            .rotulo { font-size: 17px; }
+            .guia {
+            fill: none;
+            stroke: #687782;
+            stroke-width: 1.2;
+            stroke-linejoin: round;
+            }
+            .superficie {
+            fill: none;
+            stroke: #a2c5c4;
+            stroke-width: 0.016;
+            }
+        </style>
+    </defs>
+
+    <rect width="530" height="675" fill="white"/>
+
+    <!-- Escala común: 59 unidades de dibujo por metro.
+    x = 59 R - 168 ; y = 320 - 59 Z. -->
+
+    <!-- Ejes del gráfico y marcas en metros -->
+    <g fill="none" stroke="#64717c" stroke-width="1.2">
+        <path d="M50 27V609H348"/>
+        <path d="M45 84H50 M45 202H50 M45 320H50 M45 438H50 M45 556H50"/>
+        <path d="M68 609V614 M127 609V614 M186 609V614
+              M245 609V614 M304 609V614"/>
+        </g>
+
+        <g class="marca" text-anchor="end">
+            <text x="40" y="88">4</text>
+            <text x="40" y="206">2</text>
+            <text x="40" y="324">0</text>
+            <text x="40" y="442">−2</text>
+            <text x="40" y="560">−4</text>
+        </g>
+
+        <g class="marca" text-anchor="middle">
+            <text x="68"  y="632">4</text>
+            <text x="127" y="632">5</text>
+            <text x="186" y="632">6</text>
+            <text x="245" y="632">7</text>
+            <text x="304" y="632">8</text>
+        </g>
+
+        <text class="eje" text-anchor="middle" x="199" y="657">R (m)</text>
+        <text class="eje" text-anchor="middle"
+              transform="translate(17 318) rotate(-90)">Z (m)</text>
+
+        <!-- Geometría en coordenadas físicas (R,Z), en metros -->
+        <g transform="translate(-168 320) scale(59 -59)"
+           stroke-linecap="round" stroke-linejoin="round">
+
+            <!-- Plasma confinado. La punta inferior del lazo es el punto X. -->
+            <path d="M5.12 -3.40
+                  C4.87 -2.70 4.39 -1.62 4.33 -0.22
+                  C4.25 1.19 4.33 2.87 4.62 3.70
+                  C4.77 4.12 5.08 4.19 5.48 4.08
+                  C6.31 3.86 7.33 3.13 7.84 2.15
+                  C8.22 1.42 8.30 0.37 8.12 -0.48
+                  C7.92 -1.42 7.19 -2.06 6.39 -2.57
+                  C5.85 -2.92 5.42 -3.15 5.12 -3.40 Z"
+                  fill="#f1f8f7" stroke="#087c78" stroke-width="0.045"/>
+
+            <!-- Superficies interiores ilustrativas -->
+            <g class="superficie">
+                <path d="M5.26 -2.71
+                      C4.73 -1.92 4.54 -0.54 4.56 0.83
+                      C4.57 2.36 4.75 3.55 5.29 3.65
+                      C5.98 3.77 7.07 3.00 7.59 2.10
+                      C8.12 1.18 8.13 -0.13 7.71 -0.99
+                      C7.32 -1.78 6.40 -2.31 5.67 -2.76
+                      C5.49 -2.87 5.36 -2.85 5.26 -2.71 Z"/>
+                <path d="M5.38 -2.14
+                      C4.99 -1.46 4.79 -0.28 4.83 0.93
+                      C4.88 2.10 5.05 2.98 5.47 3.10
+                      C6.02 3.26 6.93 2.60 7.36 1.87
+                      C7.85 1.04 7.86 -0.02 7.48 -0.73
+                      C7.12 -1.41 6.32 -1.92 5.76 -2.19
+                      C5.58 -2.28 5.46 -2.26 5.38 -2.14 Z"/>
+                <path d="M5.54 -1.55
+                      C5.22 -0.95 5.11 -0.05 5.15 0.89
+                      C5.19 1.83 5.38 2.48 5.71 2.56
+                      C6.19 2.67 6.82 2.17 7.14 1.55
+                      C7.48 0.89 7.51 0.07 7.22 -0.49
+                      C6.94 -1.04 6.31 -1.46 5.90 -1.66
+                      C5.74 -1.74 5.61 -1.68 5.54 -1.55 Z"/>
+                <path d="M5.77 -0.92
+                      C5.52 -0.44 5.48 0.22 5.52 0.91
+                      C5.56 1.51 5.71 1.96 5.97 2.00
+                      C6.32 2.06 6.78 1.68 6.99 1.20
+                      C7.21 0.68 7.16 0.11 6.97 -0.28
+                      C6.76 -0.66 6.34 -0.97 6.04 -1.03
+                      C5.92 -1.06 5.83 -1.02 5.77 -0.92 Z"/>
+                <path d="M5.99 -0.35
+                      C5.82 0.02 5.83 0.59 5.91 0.98
+                      C5.99 1.37 6.16 1.54 6.35 1.50
+                      C6.65 1.43 6.88 1.07 6.91 0.66
+                      C6.95 0.20 6.77 -0.16 6.48 -0.36
+                      C6.26 -0.52 6.08 -0.53 5.99 -0.35 Z"/>
+                <ellipse cx="6.37" cy="0.51" rx="0.24" ry="0.45"/>
+            </g>
+
+            <!-- Ramas abiertas desde X hasta las caras materiales -->
+            <g fill="none" stroke="#087c78" stroke-width="0.034">
+                <path d="M5.12 -3.40 C4.91 -3.58 4.61 -3.66 4.31 -3.615"/>
+                <path d="M5.12 -3.40 C5.23 -3.71 5.42 -4.00 5.5642 -4.16"/>
+            </g>
+
+            <!-- Primera pared: vértices de geometria_pared.csv, redondeados -->
+            <polyline fill="none" stroke="#263440" stroke-width="0.048"
+                      points="4.1113,-2.4956 4.1113,-1.4833 4.1113,-0.4680
+                      4.1113,0.5483 4.1113,1.5639 4.1113,2.5799
+                      4.1313,3.5924 4.3298,4.3414 4.9364,4.7213
+                      5.7508,4.5369 6.5486,3.9290 7.3970,3.1837
+                      7.9010,2.4698 8.2638,1.6911 8.3878,0.6433
+                      8.2998,-0.4104 7.8949,-1.3262 7.2779,-2.2421
+                      6.2795,-3.1478 6.2774,-3.1508 6.2773,-3.1547
+                      6.2791,-3.1594 6.2825,-3.1647 6.2872,-3.1706
+                      6.2931,-3.1770 6.2999,-3.1836 6.3074,-3.1904
+                      6.3153,-3.1973 6.3234,-3.2042 6.3314,-3.2109
+                      6.3392,-3.2173 6.3465,-3.2233 6.3530,-3.2288
+                      6.3585,-3.2337 6.3628,-3.2378 6.3657,-3.2411
+                      6.3669,-3.2434 6.3661,-3.2446 6.3632,-3.2446"/>
+
+            <!-- Divertor: vértices de geometria_divertor.csv, en el mismo sistema -->
+            <polyline fill="none" stroke="#b55b1d" stroke-width="0.056"
+                      points="4.1113,-2.4956 4.1178,-2.5285 4.1358,-2.5548
+                      4.1629,-2.5763 4.1968,-2.5945 4.2350,-2.6113
+                      4.2753,-2.6281 4.3152,-2.6467 4.3523,-2.6687
+                      4.3844,-2.6958 4.4483,-2.7781 4.4943,-2.8716
+                      4.5205,-2.9725 4.5260,-3.0766 4.5104,-3.1796
+                      4.4745,-3.2775 4.1624,-3.9175 4.1882,-3.8826
+                      4.4915,-3.9065 4.6453,-3.7432 4.7279,-3.7169
+                      4.8139,-3.7064 4.9004,-3.7120 4.9843,-3.7335
+                      5.0628,-3.7702 5.1332,-3.8209 5.1929,-3.8836
+                      5.2526,-3.9824 5.2723,-4.2608 5.5566,-4.5450
+                      5.5642,-4.5743 5.5642,-3.9235 5.5692,-3.7933
+                      5.5892,-3.6962 5.6373,-3.5751 5.7084,-3.4669
+                      5.7995,-3.3748 5.9076,-3.3027 6.0278,-3.2536
+                      6.1549,-3.2296 6.2651,-3.2286 6.3632,-3.2446"/>
+
+            <circle cx="6.37" cy="0.51" r="0.065" fill="#202a33"/>
+            <circle cx="5.12" cy="-3.40" r="0.060"
+                    fill="white" stroke="#087c78" stroke-width="0.030"/>
+            </g>
+
+            <!-- Rótulos exteriores. Los extremos de las guías señalan la geometría. -->
+            <g class="guia">
+                <path d="M298.2 174.3 L337 135 H360"/>
+                <path d="M294.6 193.2 L341 195 H360"/>
+                <path d="M320 282 L344 249 H360"/>
+                <path d="M212 289.9 H360" stroke-dasharray="3 4"/>
+                <path d="M138 522 L222 510 H360"/>
+                <path d="M160.3 567 L230 563 H360"/>
+            </g>
+
+            <g class="rotulo">
+                <text x="369" y="140">Primera pared (FW)</text>
+                <text x="369" y="200">LCFS</text>
+                <text x="369" y="254">SOL</text>
+                <text x="369" y="295">Eje magnético</text>
+                <text x="369" y="515">Punto X</text>
+                <text x="369" y="568">Divertor</text>
+            </g>
+        </svg>

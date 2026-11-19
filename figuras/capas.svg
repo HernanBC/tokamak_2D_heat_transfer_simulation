@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="760" height="310" viewBox="0 0 760 310"
+     role="img" aria-labelledby="titulo descripcion" lang="es">
+  <title id="titulo">Capas de la primera pared y del divertor</title>
+  <desc id="descripcion">
+    Cortes esquemáticos con la cara expuesta al plasma hacia arriba.
+    La primera pared tiene dos canales de agua en el CuCrZr y un canal
+    centrado en la capa de acero. En los blancos y el domo, una línea
+    azul indica la cara fría equivalente del CuCrZr.
+  </desc>
+
+  <rect width="760" height="310" fill="white"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#202a31">
+    <g font-size="19" font-weight="600" text-anchor="middle">
+      <text x="195" y="32">Primera pared (NHF)</text>
+      <text x="565" y="32">Divertor (blancos y domo)</text>
+    </g>
+
+    <!-- Primera pared -->
+    <g stroke="#59646b" stroke-width="1.2">
+      <rect x="60" y="56" width="270" height="32" fill="#e5e9ec"/>
+      <rect x="60" y="88" width="270" height="26" fill="#efbd94"/>
+      <rect x="60" y="114" width="270" height="48" fill="#c99c55"/>
+      <rect x="60" y="162" width="270" height="74" fill="#f1f2f3"/>
+    </g>
+    <path d="M60 56 H330" stroke="#ad4918" stroke-width="4"/>
+
+    <g font-size="16" text-anchor="middle">
+      <text x="195" y="78">W</text>
+      <text x="195" y="107">Cu</text>
+      <text x="195" y="144">CuCrZr</text>
+      <text x="195" y="180">Acero 316L(N)-IG</text>
+    </g>
+
+    <g fill="#e0f2fb" stroke="#1873a2" stroke-width="2.5">
+      <circle cx="110" cy="138" r="9"/>
+      <circle cx="280" cy="138" r="9"/>
+      <circle cx="195" cy="207" r="16"/>
+    </g>
+
+    <path d="M195 224 V251 H211"
+          fill="none" stroke="#1873a2" stroke-width="1.4"/>
+    <text x="218" y="256" fill="#155f85" font-size="15">Canal de agua</text>
+
+    <!-- Corte común de los blancos y el domo -->
+    <g stroke="#59646b" stroke-width="1.2">
+      <rect x="430" y="56" width="270" height="32" fill="#e5e9ec"/>
+      <rect x="430" y="88" width="270" height="26" fill="#efbd94"/>
+      <rect x="430" y="114" width="270" height="48" fill="#c99c55"/>
+    </g>
+    <path d="M430 56 H700" stroke="#ad4918" stroke-width="4"/>
+    <path d="M430 162 H700" stroke="#1873a2" stroke-width="4"/>
+
+    <g font-size="16" text-anchor="middle">
+      <text x="565" y="78">W</text>
+      <text x="565" y="107">Cu</text>
+      <text x="565" y="144">CuCrZr</text>
+    </g>
+
+    <path d="M450 164 V190 H464"
+          fill="none" stroke="#1873a2" stroke-width="1.4"/>
+    <text x="471" y="195" fill="#155f85" font-size="15">Cara fría equivalente</text>
+
+    <!-- Leyenda común -->
+    <path d="M60 271 H700" stroke="#d4dade"/>
+    <path d="M279 291 H307" stroke="#ad4918" stroke-width="4"/>
+    <text x="317" y="296" font-size="14">Cara expuesta al plasma</text>
+  </g>
+</svg>

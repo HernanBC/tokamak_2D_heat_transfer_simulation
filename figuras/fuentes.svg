@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="760" height="495" viewBox="0 0 760 495"
+     role="img" aria-labelledby="titulo descripcion">
+
+    <title id="titulo">Aportes y pérdidas de energía del plasma</title>
+    <desc id="descripcion">
+        Corte poloidal esquemático de un tokamak. Una onda ECRH llega desde
+        el exterior y se absorbe en el plasma. La corriente del plasma produce
+        calentamiento óhmico en su interior. Los fotones de bremsstrahlung
+        se emiten desde el volumen hacia la cámara. El calor que pasa al SOL
+        cruza la última superficie cerrada de flujo.
+    </desc>
+
+    <defs>
+        <style>
+            text {
+            font-family: Arial, Helvetica, sans-serif;
+            fill: #263440;
+            }
+            .grupo {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            }
+            .nombre {
+            font-size: 18px;
+            font-weight: 600;
+            }
+            .detalle { font-size: 15px; }
+            .nota { font-size: 13px; fill: #52606b; }
+            .guia {
+            fill: none;
+            stroke: #77838b;
+            stroke-width: 1.2;
+            stroke-linejoin: round;
+            }
+            .onda {
+            fill: none;
+            stroke: #b45d18;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            marker-end: url(#punta-onda);
+            }
+            .foton {
+            fill: none;
+            stroke: #76569a;
+            stroke-width: 2.1;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            marker-end: url(#punta-foton);
+            }
+            .salida {
+            fill: none;
+            stroke: #087c78;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            marker-end: url(#punta-calor);
+            }
+        </style>
+
+        <marker id="punta-onda" viewBox="0 0 9 8" refX="8" refY="4"
+                markerWidth="7" markerHeight="6" orient="auto">
+            <path d="M0 0L9 4L0 8L2 4Z" fill="#b45d18"/>
+        </marker>
+        <marker id="punta-foton" viewBox="0 0 9 8" refX="8" refY="4"
+                markerWidth="6" markerHeight="5" orient="auto">
+            <path d="M0 0L9 4L0 8L2 4Z" fill="#76569a"/>
+        </marker>
+        <marker id="punta-calor" viewBox="0 0 9 8" refX="8" refY="4"
+                markerWidth="5.2" markerHeight="4.6" orient="auto">
+            <path d="M0 0L9 4L0 8L2 4Z" fill="#087c78"/>
+        </marker>
+
+        <!-- Símbolo de corriente toroidal saliendo del plano del dibujo. -->
+        <g id="corriente">
+            <circle r="5.4" fill="white" stroke="#a55217" stroke-width="1.7"/>
+            <circle r="1.8" fill="#a55217"/>
+        </g>
+    </defs>
+
+    <rect width="760" height="495" fill="white"/>
+
+    <!-- Pared y divertor. Se conserva la silueta alargada de la figura 1. -->
+    <g transform="translate(64 240) scale(45 -45)"
+       fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+        <polyline stroke="#35434e" stroke-width="0.046"
+                  points="4.1113,-2.4956 4.1113,-1.4833 4.1113,-0.4680
+                  4.1113,0.5483 4.1113,1.5639 4.1113,2.5799
+                  4.1313,3.5924 4.3298,4.3414 4.9364,4.7213
+                  5.7508,4.5369 6.5486,3.9290 7.3970,3.1837
+                  7.9010,2.4698 8.2638,1.6911 8.3878,0.6433
+                  8.2998,-0.4104 7.8949,-1.3262 7.2779,-2.2421
+                  6.2795,-3.1478 6.2773,-3.1547 6.2999,-3.1836
+                  6.3392,-3.2173 6.3657,-3.2411 6.3632,-3.2446"/>
+
+        <polyline stroke="#68747a" stroke-width="0.052"
+                  points="4.1113,-2.4956 4.1358,-2.5548 4.1968,-2.5945
+                  4.2753,-2.6281 4.3523,-2.6687 4.4483,-2.7781
+                  4.5205,-2.9725 4.5260,-3.0766 4.4745,-3.2775
+                  4.1624,-3.9175 4.1882,-3.8826 4.4915,-3.9065
+                  4.6453,-3.7432 4.7279,-3.7169 4.8139,-3.7064
+                  4.9004,-3.7120 4.9843,-3.7335 5.0628,-3.7702
+                  5.1332,-3.8209 5.1929,-3.8836 5.2526,-3.9824
+                  5.2723,-4.2608 5.5566,-4.5450 5.5642,-4.5743
+                  5.5642,-3.9235 5.5692,-3.7933 5.5892,-3.6962
+                  5.6373,-3.5751 5.7084,-3.4669 5.7995,-3.3748
+                  5.9076,-3.3027 6.0278,-3.2536 6.1549,-3.2296
+                  6.2651,-3.2286 6.3632,-3.2446"/>
+
+        <!-- LCFS y ramas abiertas esquemáticas. -->
+        <path d="M5.12 -3.40
+              C4.87 -2.70 4.39 -1.62 4.33 -0.22
+              C4.25 1.19 4.33 2.87 4.62 3.70
+              C4.77 4.12 5.08 4.19 5.48 4.08
+              C6.31 3.86 7.33 3.13 7.84 2.15
+              C8.22 1.42 8.30 0.37 8.12 -0.48
+              C7.92 -1.42 7.19 -2.06 6.39 -2.57
+              C5.85 -2.92 5.42 -3.15 5.12 -3.40Z"
+              fill="#f0f7f6" stroke="#087c78" stroke-width="0.047"/>
+        <path d="M5.12 -3.40 C4.91 -3.58 4.61 -3.66 4.31 -3.615
+              M5.12 -3.40 C5.23 -3.71 5.42 -4.00 5.5642 -4.16"
+              stroke="#68a6a2" stroke-width="0.031"/>
+        </g>
+
+        <!-- Encabezados laterales. -->
+        <g>
+            <text class="grupo" x="22" y="58">APORTES AL PLASMA</text>
+            <path d="M22 68H199" stroke="#d4b89e"/>
+            <text class="grupo" x="492" y="58">PÉRDIDAS DEL PLASMA</text>
+            <path d="M492 68H724" stroke="#b7c7c8"/>
+        </g>
+
+        <!-- ECRH: onda incidente y depósito dentro del plasma. -->
+        <g>
+            <text class="nombre" x="22" y="117" style="fill:#a55217">ECRH</text>
+            <text class="detalle" x="22" y="141">El plasma absorbe</text>
+            <text class="detalle" x="22" y="162">la onda incidente.</text>
+
+            <ellipse cx="309" cy="185" rx="15" ry="19"
+                     fill="#f3cf9e" opacity="0.7"/>
+            <path class="onda"
+                  d="M167 185
+                  q5 -10 10 0 t10 0 t10 0 t10 0 t10 0 t10 0
+                  t10 0 t10 0 t10 0 t10 0 t10 0 t10 0
+                  L306 185"/>
+            </g>
+
+            <!-- Joule: corriente en el volumen; la guía identifica un símbolo. -->
+            <g>
+                <text class="nombre" x="22" y="286" style="fill:#a55217">Calentamiento Joule</text>
+                <text class="detalle" x="22" y="311">La corriente disipa energía</text>
+                <text class="detalle" x="22" y="332">dentro del plasma.</text>
+
+                <use href="#corriente" x="292" y="253"/>
+                <use href="#corriente" x="316" y="264"/>
+                <use href="#corriente" x="299" y="280"/>
+                <path class="guia" d="M192 282H228L285 254"/>
+            </g>
+
+            <!-- Fotones: distintos puntos de emisión dentro del volumen.
+            Cada trazo termina en la pared que intercepta el fotón. -->
+            <g>
+                <path class="foton"
+                      d="M318 112l1 -8 5 -1 0 -7 5 -1 0 -7 5 -1
+                      0 -7 5 -1 1 -7 5 -1 1 -5"/>
+                <path class="foton"
+                      d="M369 158l7 -2 0 -5 8 0 1 -5 8 0 1 -5
+                      8 0 1 -5 8 0 2 -5 7 -1"/>
+                <path class="foton"
+                      d="M368 263l7 3 3 -4 7 5 3 -4 7 5 3 -4
+                      7 5 3 -4 7 5 3 -3 6 4"/>
+
+                <text class="nombre" x="492" y="117" style="fill:#705192">Bremsstrahlung</text>
+                <text class="detalle" x="492" y="142">Los fotones se emiten desde</text>
+                <text class="detalle" x="492" y="163">el volumen y llegan a la pared.</text>
+                <path class="guia" d="M481 124H454L423 130"/>
+            </g>
+
+            <!-- Pérdida por la LCFS: flechas cortas desde la frontera hacia el SOL. -->
+            <g>
+                <path class="salida" d="M275 65l-6 -7"/>
+                <path class="salida" d="M432 212l7 0"/>
+                <path class="salida" d="M387 329l6 7"/>
+
+                <text class="nombre" x="492" y="267" style="fill:#087c78">Calor hacia el SOL</text>
+                <text class="detalle" x="492" y="292">El flujo térmico cruza la LCFS</text>
+                <text class="detalle" x="492" y="313">hacia las líneas abiertas.</text>
+                <path class="guia" d="M481 251H463L443 217"/>
+            </g>
+
+        </svg>

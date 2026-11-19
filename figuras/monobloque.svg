@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 840 408" width="840" height="408"
+     role="img" aria-labelledby="titulo descripcion" lang="es">
+  <title id="titulo">Del monobloque a la banda equivalente en los blancos del divertor</title>
+  <desc id="descripcion">
+    A la izquierda, un corte transversal muestra un bloque de tungsteno con una
+    capa anular de cobre y un tubo de CuCrZr refrigerado por agua. El calor
+    entra por la cara superior y se conduce hacia el tubo. A la derecha, los
+    mismos materiales forman tres capas continuas. La cara superior recibe la
+    carga del plasma y la cara inferior representa la refrigeración equivalente.
+    Ambos dibujos son esquemáticos y no están a escala.
+  </desc>
+
+  <defs>
+    <marker id="flechaCalor" viewBox="0 0 10 10" refX="8.3" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#ad4918"/>
+    </marker>
+    <marker id="flechaGris" viewBox="0 0 10 10" refX="8.3" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#53616a"/>
+    </marker>
+  </defs>
+
+  <rect width="840" height="408" fill="#fff"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#202a31">
+    <g font-size="20" font-weight="600" text-anchor="middle">
+      <text x="205" y="34">Monobloque con tubo</text>
+      <text x="641" y="34">Banda equivalente</text>
+    </g>
+    <g font-size="14" fill="#52616a" text-anchor="middle">
+      <text x="205" y="57">Corte transversal al tubo</text>
+      <text x="641" y="57">Detalle local de las capas</text>
+    </g>
+
+    <!-- Monobloque. Desde afuera hacia adentro: W, Cu, CuCrZr y agua. -->
+    <rect x="86" y="112" width="238" height="173" rx="2"
+          fill="#e5e9ec" stroke="#46535c" stroke-width="2"/>
+    <circle cx="205" cy="214" r="54" fill="#efbd94"
+            stroke="#805e48" stroke-width="1.5"/>
+    <circle cx="205" cy="214" r="44" fill="#c99c55"
+            stroke="#79613c" stroke-width="1.5"/>
+    <circle cx="205" cy="214" r="33" fill="#e0f2fb"
+            stroke="#1873a2" stroke-width="4"/>
+    <text x="205" y="219" font-size="15" text-anchor="middle">Agua</text>
+
+    <!-- La carga superficial entra por arriba. -->
+    <g fill="none" stroke="#ad4918" stroke-width="2.2"
+       marker-end="url(#flechaCalor)">
+      <path d="M132 78 V103"/>
+      <path d="M205 78 V103"/>
+      <path d="M278 78 V103"/>
+    </g>
+    <path d="M86 112 H324" stroke="#ad4918" stroke-width="5"/>
+
+    <!-- Recorridos esquemáticos de conducción que convergen hacia el tubo. -->
+    <g fill="none" stroke="#ad4918" stroke-width="2"
+       marker-end="url(#flechaCalor)">
+      <path d="M124 131 Q126 164 151 184"/>
+      <path d="M205 130 V153"/>
+      <path d="M286 131 Q284 164 259 184"/>
+    </g>
+
+    <!-- Ancho de la cara expuesta. -->
+    <g fill="none" stroke="#65737b" stroke-width="1.2">
+      <path d="M86 291 V309 M324 291 V309 M86 303 H324"/>
+      <path d="M86 303 l8 -3 M86 303 l8 3 M324 303 l-8 -3 M324 303 l-8 3"/>
+    </g>
+    <text x="205" y="331" font-size="15" text-anchor="middle">
+      Ancho expuesto: 28 mm
+    </text>
+
+    <!-- Paso de la geometría física a la equivalente. -->
+    <path d="M355 203 H454" fill="none" stroke="#53616a" stroke-width="2"
+          marker-end="url(#flechaGris)"/>
+    <text x="405" y="188" font-size="14" text-anchor="middle" fill="#52616a">
+      se representa
+    </text>
+    <text x="405" y="225" font-size="14" text-anchor="middle" fill="#52616a">
+      mediante
+    </text>
+
+    <!-- Las capas se dibujan en un tramo local, sin escala de espesores. -->
+    <g stroke="#59646b" stroke-width="1.5">
+      <path d="M489 112 Q641 98 793 112 L793 187 Q641 173 489 187 Z"
+            fill="#e5e9ec"/>
+      <path d="M489 187 Q641 173 793 187 L793 218 Q641 204 489 218 Z"
+            fill="#efbd94"/>
+      <path d="M489 218 Q641 204 793 218 L793 259 Q641 245 489 259 Z"
+            fill="#c99c55"/>
+    </g>
+    <g font-size="16" text-anchor="middle">
+      <text x="641" y="150">Tungsteno (W)</text>
+      <text x="641" y="199">Cobre (Cu)</text>
+      <text x="641" y="238">CuCrZr</text>
+    </g>
+
+    <!-- Carga incidente, conducción a través de las capas y cara convectiva. -->
+    <g fill="none" stroke="#ad4918" stroke-width="2.2"
+       marker-end="url(#flechaCalor)">
+      <path d="M545 77 V100"/>
+      <path d="M641 73 V96"/>
+      <path d="M737 77 V100"/>
+      <path d="M527 130 V239"/>
+    </g>
+    <path d="M489 112 Q641 98 793 112" fill="none"
+          stroke="#ad4918" stroke-width="5"/>
+    <path d="M489 259 Q641 245 793 259" fill="none"
+          stroke="#1873a2" stroke-width="5"/>
+    <g text-anchor="middle" font-size="15">
+      <text x="641" y="290" fill="#155f85">Cara fría del CuCrZr</text>
+      <text x="641" y="312">Convección equivalente hacia el agua</text>
+    </g>
+
+    <!-- Leyenda común a ambos dibujos. -->
+    <path d="M45 352 H795" stroke="#d8dee2"/>
+    <g font-size="15">
+      <path d="M65 379 H101" stroke="#ad4918" stroke-width="5"/>
+      <text x="112" y="384">Cara expuesta al plasma</text>
+      <path d="M411 379 H447" stroke="#1873a2" stroke-width="5"/>
+      <text x="458" y="384">Superficie donde se aplica la convección</text>
+    </g>
+  </g>
+</svg>
