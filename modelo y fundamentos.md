@@ -712,12 +712,12 @@ El efecto de la cinta sobre el intercambio ya está incluido en $\mathrm{Nu}_{\m
 Para calcular la refrigeración del domo se usa como referencia el prototipo estudiado por Rybikov et al. [21]. El caso de referencia usa $D_h=0.016\ \mathrm m$ y $v_f=4.2\ \mathrm{m/s}$. La ley adoptada representa un canal con área de intercambio aumentada por dientes. Se evalúa con la temperatura local de la cara fría $T_w$ y la temperatura prescrita del agua $T_f$:
 
 ```math
-h_0(T_w)=
-\left\{\begin{array}{ll}
-21000, & T_w<T_f,\\
-21000+3500\dfrac{T_w-T_f}{523.508\ \mathrm K-T_f},
-& T_f\le T_w<523.508\ \mathrm K .
-\end{array}\right.
+h_0(T_w)=21000 \qquad \text{si } T_w<T_f.
+```
+
+```math
+h_0(T_w)=21000+3500\frac{T_w-T_f}{523.508\ \mathrm K-T_f}
+\qquad \text{si } T_f\le T_w<523.508\ \mathrm K.
 ```
 
 $h_0$ está en $\mathrm{W/(m^2\,K)}$. La altura del diente es $a=0.004\ \mathrm m$, su espesor $b_d=0.003\ \mathrm m$ y el paso adoptado $P_d=0.0071\ \mathrm m$. Con la aproximación de aleta recta de longitud corregida [19],
@@ -1147,12 +1147,16 @@ h_A=\frac{\pi D_i}{b_{\mathrm{exp}}}h_{\mathrm{mojado}} .
 - Canal del domo, con $h_0$ en $\mathrm{W/(m^2\,K)}$ y $T_{\mathrm{sat}}=523.508\ \mathrm K$:
 
 ```math
+h_0(T_w)=21000 \qquad \text{si } T_w<T_f.
+```
+
+```math
+h_0(T_w)=21000+3500\frac{T_w-T_f}{T_{\mathrm{sat}}-T_f}
+\qquad \text{si } T_f\le T_w<T_{\mathrm{sat}}.
+```
+
+```math
 \begin{aligned}
-h_0(T_w)&=
-\left\{\begin{array}{ll}
-21000, & T_w<T_f,\\
-21000+3500(T_w-T_f)/(T_{\mathrm{sat}}-T_f), & T_f\le T_w<T_{\mathrm{sat}},
-\end{array}\right.\\
 L_c&=a+b_d/2,\qquad
 m_f=\sqrt{\frac{2h_0}{k_{\mathrm{CuCrZr}}(T_w)b_d}},\qquad
 \eta_f=\frac{\tanh(m_fL_c)}{m_fL_c},\\
