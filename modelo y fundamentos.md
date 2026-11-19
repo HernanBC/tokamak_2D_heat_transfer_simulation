@@ -66,7 +66,7 @@ Aquí $d\ell$ es arco en el plano $R,Z$. $\int_{\Omega}(\cdot)\,dV$ y $\int_{\Ga
 | Potencia y energía almacenada | $P,U$ | W, J |
 | Coeficiente de intercambio por área | $h$ o $H$ | $\mathrm{W/(m^2\,K)}$ |
 
-Por convención, $q''_{\mathrm{sep}}>0$ indica calor que sale del plasma y $q''_{\mathrm{in},j}>0$ indica calor que entra al sólido.
+Por convención, $`q_{\mathrm{sep}}^{\prime\prime}>0`$ indica calor que sale del plasma y $`q_{\mathrm{in},j}^{\prime\prime}>0`$ indica calor que entra al sólido.
 
 ### 2.1. Constantes y parámetros de referencia
 
@@ -131,11 +131,11 @@ Si en la figura 1 seguimos una curva cerrada de $\psi$ constante, la presión $p
 
 ```math
 J_\phi=
-\begin{cases}
-Rp'(\psi)+\dfrac{FF'(\psi)}{\mu_0R}, & (R,Z)\in\Omega_p,\\[5pt]
-I_{\mathrm{eff},i}/A_{c,i}, & (R,Z)\in\Omega_{c,i},\\[2pt]
+\left\{\begin{array}{ll}
+Rp'(\psi)+\dfrac{FF'(\psi)}{\mu_0R}, & (R,Z)\in\Omega_p,\\
+I_{\mathrm{eff},i}/A_{c,i}, & (R,Z)\in\Omega_{c,i},\\
 0, & \text{vacío y regiones pasivas}.
-\end{cases}
+\end{array}\right.
 ```
 
 En particular, dentro del plasma el miembro derecho es $\mu_0R^2p'+FF'$. El área de bobina $A_{c,i}=\int_{\Omega_{c,i}}dS_p$ se obtiene de sus triángulos. La densidad de corriente es uniforme en cada sección de bobina.
@@ -713,11 +713,11 @@ Para calcular la refrigeración del domo se usa como referencia el prototipo est
 
 ```math
 h_0(T_w)=
-\begin{cases}
-21000, & T_w<T_f,\\[3pt]
+\left\{\begin{array}{ll}
+21000, & T_w<T_f,\\
 21000+3500\dfrac{T_w-T_f}{523.508\ \mathrm K-T_f},
 & T_f\le T_w<523.508\ \mathrm K .
-\end{cases}
+\end{array}\right.
 ```
 
 $h_0$ está en $\mathrm{W/(m^2\,K)}$. La altura del diente es $a=0.004\ \mathrm m$, su espesor $b_d=0.003\ \mathrm m$ y el paso adoptado $P_d=0.0071\ \mathrm m$. Con la aproximación de aleta recta de longitud corregida [19],
@@ -890,11 +890,11 @@ El equilibrio permanece congelado aunque cambie la presión térmica. El SOL red
 -\Delta^{*}\psi&=\mu_0RJ_\phi,\qquad
 \Delta^{*}\psi=\partial_{RR}\psi-\frac{1}{R}\partial_R\psi+\partial_{ZZ}\psi,\\
 J_\phi&=
-\begin{cases}
+\left\{\begin{array}{ll}
 Rp'(\psi)+FF'(\psi)/(\mu_0R), & \Omega_p,\\
 I_{\mathrm{eff},i}/A_{c,i}, & \Omega_{c,i},\\
 0, & \text{vacío y regiones pasivas},
-\end{cases}\\
+\end{array}\right.\\
 I_{\mathrm{eff},i}&=N_{\mathrm{eff},i}I_{\mathrm{vuelta},i},\qquad
 A_{c,i}=\int_{\Omega_{c,i}}dS_p,\qquad I_p=\int_{\Omega_p}J_{\phi,p}\,dS_p .
 \end{aligned}
@@ -1114,11 +1114,11 @@ T_j(R,Z,0)&=T_f=343.15\ \mathrm K .
 
 ```math
 \mathbf q_i\cdot\mathbf n_j=
-\begin{cases}
+\left\{\begin{array}{ll}
 -q''_{\mathrm{in},j}, & \text{cara expuesta},\\
 h_{\mathrm{BC}}(T_w-T_f), & \text{canal NHF o cara fría del divertor},\\
 0, & \text{cara posterior NHF o corte exterior adiabático}.
-\end{cases}
+\end{array}\right.
 ```
 
 - Forma débil:
@@ -1149,10 +1149,10 @@ h_A=\frac{\pi D_i}{b_{\mathrm{exp}}}h_{\mathrm{mojado}} .
 ```math
 \begin{aligned}
 h_0(T_w)&=
-\begin{cases}
+\left\{\begin{array}{ll}
 21000, & T_w<T_f,\\
 21000+3500(T_w-T_f)/(T_{\mathrm{sat}}-T_f), & T_f\le T_w<T_{\mathrm{sat}},
-\end{cases}\\
+\end{array}\right.\\
 L_c&=a+b_d/2,\qquad
 m_f=\sqrt{\frac{2h_0}{k_{\mathrm{CuCrZr}}(T_w)b_d}},\qquad
 \eta_f=\frac{\tanh(m_fL_c)}{m_fL_c},\\
