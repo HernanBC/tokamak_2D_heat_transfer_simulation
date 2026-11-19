@@ -48,9 +48,9 @@ Se usan coordenadas cilíndricas $(R,\phi,Z)$. El radio $R$ se mide desde el eje
 
 Se distingue el área del corte poloidal $dS_p=dR\,dZ$ del volumen y del área física que se generan al girar el corte:
 
-$$
+```math
 dV=2\pi R\,dR\,dZ,\qquad dA=2\pi R\,d\ell .
-$$
+```
 
 Aquí $d\ell$ es arco en el plano $R,Z$. $\int_{\Omega}(\cdot)\,dV$ y $\int_{\Gamma}(\cdot)\,dA$ representan el volumen y la superficie de revolución completos. La corriente toroidal que atraviesa una sección y el flujo magnético toroidal que atraviesa ese mismo corte se integran con $dS_p$.
 
@@ -103,18 +103,18 @@ La incógnita del equilibrio es $\psi$, el flujo magnético poloidal por radián
 
 En el plasma se define $F(\psi)=RB_\phi$. Las componentes del campo son
 
-$$
+```math
 B_R=-\frac{1}{R}\partial_Z\psi,\qquad
 B_Z=\frac{1}{R}\partial_R\psi,\qquad
 B_\phi=\frac{F(\psi)}{R}.
-$$
+```
 
 Por construcción, $\mathbf B\cdot\nabla\psi=0$. Las curvas de $\psi$ constante describen las líneas de campo proyectadas en el plano poloidal. En la cámara exterior, con $R>0$, la ausencia de corriente poloidal y la continuidad del campo toroidal dan
 
-$$
+```math
 F_{\mathrm{vac}}=F(1)=32.8600006\ \mathrm{T\,m},\qquad
 B_{\phi,\mathrm{ext}}=\frac{F_{\mathrm{vac}}}{R}.
-$$
+```
 
 Aquí y en los perfiles, $F(1)$ designa el valor en la coordenada normalizada $s=1$. El campo poloidal exterior sí varía con la solución de Grad–Shafranov.
 
@@ -124,19 +124,19 @@ En el equilibrio, la fuerza magnética por unidad de volumen compensa el gradien
 
 Si en la figura 1 seguimos una curva cerrada de $\psi$ constante, la presión $p$ y la cantidad $F=RB_\phi$ mantienen su valor a lo largo de esa curva. Al pasar a otra curva, sus valores pueden cambiar. Por eso los perfiles de entrada especifican $p$ y $F$ en función de $\psi$. Al combinar el balance de fuerzas con la componente toroidal de la ley de Ampère se obtiene la ecuación de Grad–Shafranov [1], [2]:
 
-$$
--\Delta^*\psi=\mu_0RJ_\phi,\qquad
-\Delta^*\psi=\partial_{RR}\psi-\frac{1}{R}\partial_R\psi+\partial_{ZZ}\psi,
-$$
+```math
+-\Delta^{*}\psi=\mu_0RJ_\phi,\qquad
+\Delta^{*}\psi=\partial_{RR}\psi-\frac{1}{R}\partial_R\psi+\partial_{ZZ}\psi,
+```
 
-$$
+```math
 J_\phi=
 \begin{cases}
 Rp'(\psi)+\dfrac{FF'(\psi)}{\mu_0R}, & (R,Z)\in\Omega_p,\\[5pt]
 I_{\mathrm{eff},i}/A_{c,i}, & (R,Z)\in\Omega_{c,i},\\[2pt]
 0, & \text{vacío y regiones pasivas}.
 \end{cases}
-$$
+```
 
 En particular, dentro del plasma el miembro derecho es $\mu_0R^2p'+FF'$. El área de bobina $A_{c,i}=\int_{\Omega_{c,i}}dS_p$ se obtiene de sus triángulos. La densidad de corriente es uniforme en cada sección de bobina.
 
@@ -179,19 +179,19 @@ La región 1 de la malla delimita la zona donde se busca el plasma. Al resolver 
 
 En el eje geométrico $R=0$ se usa la referencia $\psi=0$ y la regularidad $\psi=O(R^2)$. En la frontera exterior de la malla, $\Gamma_{\mathrm{ext}}$, se prescribe el flujo producido por todas las corrientes de plasma y bobinas en espacio libre [1], [3]. Para $x=(R,Z)$ y $x'=(R',Z')$,
 
-$$
+```math
 m=\frac{4RR'}{(R+R')^2+(Z-Z')^2},\qquad
 G(x,x')=\frac{\mu_0\sqrt{RR'}}{2\pi\sqrt m}
 \left[(2-m)K(m)-2E(m)\right],
-$$
+```
 
 donde $K$ y $E$ son las integrales elípticas completas de primera y segunda especie evaluadas con el parámetro $m$. Para $x\in\Gamma_{\mathrm{ext}}$,
 
-$$
+```math
 \psi(x)=
 \int_{\Omega_p}G(x,x')J_{\phi,p}(x')\,dS'_p
 +\sum_i\int_{\Omega_{c,i}}G(x,x')J_{\phi,c,i}(x')\,dS'_p .
-$$
+```
 
 En estas integrales, $x'$ indica dónde pasa la corriente y $x$ es el punto del borde de la malla donde queremos calcular $\psi$. Al girar el corte, un pequeño elemento situado en $x'$ forma un anillo que lleva una corriente $J_\phi(x')\,dR'\,dZ'$, en amperios. El núcleo de Green $G(x,x')$ indica cuánto flujo por radián produce ese anillo en $x$ por cada amperio de corriente. La integral suma los aportes de todos los anillos del plasma y de las bobinas. El efecto de la vuelta completa ya está incluido en $G$.
 
@@ -205,19 +205,19 @@ Una vez identificado $\Omega_p$, se calcula la corriente total del plasma integr
 
 Al dividir la ecuación de Grad–Shafranov por $R$, se obtiene $-\nabla_{RZ}\cdot(R^{-1}\nabla_{RZ}\psi)=\mu_0J_\phi$. Se multiplica por una función de prueba $v$ y se integra con $dS_p$. Al pasar una derivada a $v$ mediante integración por partes resulta
 
-$$
+```math
 \int_{\Omega_m}\frac{\nabla\psi\cdot\nabla v}{R}\,dS_p
 -\int_{\partial\Omega_m}v\,\frac{\partial_n\psi}{R}\,d\ell
 =\mu_0\int_{\Omega_m}J_\phi v\,dS_p .
-$$
+```
 
 En el borde exterior, el valor de $\psi$ viene dado por la fórmula de Green de la sección 4.4. Como ese valor está fijado para este paso del cálculo, se toman funciones de prueba que valen cero allí. En el eje también se respeta la condición $\psi=0$ y su comportamiento regular cuando $R$ tiende a cero. En las fronteras entre regiones, las contribuciones de los dos lados se cancelan. Así se obtiene la forma débil:
 
-$$
+```math
 \int_{\Omega_m}\frac{\nabla\psi\cdot\nabla v}{R}\,dS_p
 =\mu_0\int_{\Omega_p}J_{\phi,p}v\,dS_p
 +\mu_0\sum_i\int_{\Omega_{c,i}}J_{\phi,c,i}v\,dS_p .
-$$
+```
 
 Esta integral magnética usa $dR\,dZ$ y el peso $1/R$ que proviene del operador. Las ecuaciones de energía de las secciones siguientes usan el volumen físico $dV$.
 
@@ -227,27 +227,27 @@ Esta integral magnética usa $dR\,dZ$ y el peso $1/R$ que proviene del operador.
 
 El plasma es deuterio completamente ionizado, con $Z_{\mathrm{eff}}=1$, $n_e=n_i=n$ y $T_e=T_i=T$. La densidad de cada especie se lee de `perfil_densidad.csv`. Su perfil es
 
-$$
+```math
 n(s)=\left[3.9+5.8(1-s^{9.15})\right]10^{19}\ \mathrm{m^{-3}},\qquad 0\le s\le1 .
-$$
+```
 
 Durante el transitorio, cada punto conserva su densidad inicial mientras su temperatura puede cambiar.
 
 La presión inicial es $p=n_ek_BT_e+n_ik_BT_i$. La energía interna por volumen suma $\tfrac32nk_BT$ por especie. Así se obtienen
 
-$$
+```math
 T_0(s)=\frac{p(s)}{2n(s)k_B},\qquad
 u_p=3nk_BT,\qquad C_V=3nk_B .
-$$
+```
 
 $C_V$ es la capacidad calorífica volumétrica, en $\mathrm{J/(m^3\,K)}$. Al inicio, $k_BT_0$ vale aproximadamente $15.959\ \mathrm{keV}$ en el eje y $200\ \mathrm{eV}$ en la LCFS. La temperatura de borde evoluciona a partir de ese valor.
 
 Sin advección macroscópica ni trabajo de compresión, la forma fuerte es
 
-$$
+```math
 3nk_B\partial_tT+\frac{1}{R}\partial_R(Rq_R)+\partial_Zq_Z
 =S_C,\qquad S_C=S_{\mathrm{ohm}}+S_{\mathrm{ECRH}}-S_{\mathrm{br}} .
-$$
+```
 
 La acumulación, la divergencia del flujo y la fuente neta están en $\mathrm{W/m^3}$. La sección 6 define los tres términos de $S_C$.
 
@@ -255,7 +255,7 @@ La acumulación, la divergencia del flujo y la fuente neta están en $\mathrm{W/
 
 Las leyes de Braginskii para carga iónica unitaria usan tiempos de colisión distintos para electrones e iones [4]. Para los logaritmos de Coulomb se usa la rama caliente del *NRL Plasma Formulary* [5]. Sea $\theta=k_BT$ en J, $t_{\mathrm{eV}}=\theta/(1.602176634\times10^{-19}\ \mathrm J)$ y $N=n/(10^6\ \mathrm{m^{-3}})$. Los dos últimos son valores numéricos de energía en eV y de densidad en $\mathrm{cm^{-3}}$, respectivamente. Con logaritmos naturales y $g=e^2/(4\pi\varepsilon_0)$,
 
-$$
+```math
 \begin{aligned}
 \ell_{ei}&=24-\ln\left(\frac{\sqrt N}{t_{\mathrm{eV}}}\right),
 &
@@ -266,16 +266,16 @@ $$
 \tau_i&=\frac{3\sqrt{m_D}\,\theta^{3/2}}
 {4\sqrt{\pi}\,n g^2\ell_{ii}} .
 \end{aligned}
-$$
+```
 
 En las expresiones de $\tau_a$ se usa $n$ en $\mathrm{m^{-3}}$ y se obtienen segundos. Tanto el transporte como la resistividad usan esta misma evaluación. El intervalo adoptado es $10\le t_{\mathrm{eV}}<10m_D/m_e\simeq3.6705\times10^4$, con $n,T,B>0$, datos finitos y ambos logaritmos mayores que uno. Para $1<\ell<10$ se reduce la precisión del cierre. Un estado de prueba fuera del intervalo requiere una nueva evaluación admisible. Si el estado físico alcanzado queda fuera, se reporta el límite de la ley sin prolongarla con valores recortados.
 
 Para $a=e,i$, con $m_i=m_D$ y $B=\sqrt{B_R^2+B_\phi^2+B_Z^2}$, se definen la frecuencia ciclotrónica en magnitud $\omega_{ca}$, el parámetro de magnetización $x_a$ y la escala de conductividad $A_a$:
 
-$$
+```math
 \omega_{ca}=\frac{eB}{m_a},\qquad x_a=\omega_{ca}\tau_a,\qquad
 A_a=\frac{nk_B\theta\tau_a}{m_a}.
-$$
+```
 
 $x_a$ es adimensional. Cuando $x_a\gg 1$, el tiempo característico entre colisiones $\tau_a$ es largo comparado con $1/\omega_{ca}$. La escala de conductividad $A_a$ se expresa en $\mathrm{W/(m\,K)}$.
 
@@ -283,21 +283,21 @@ $x_a$ es adimensional. Cuando $x_a\gg 1$, el tiempo característico entre colisi
 
 La figura 2 muestra las dos direcciones físicas de conducción. Las contribuciones clásicas por especie, en $\mathrm{W/(m\,K)}$, son [4, §4, tabla 2]
 
-$$
+```math
 \begin{aligned}
 k_{\parallel,e}&=3.1616A_e,
 & k_{\perp,e}&=A_e\frac{4.664x_e^2+11.92}{x_e^4+14.79x_e^2+3.7703},\\
 k_{\parallel,i}&=3.906A_i,
 & k_{\perp,i}&=A_i\frac{2x_i^2+2.645}{x_i^4+2.70x_i^2+0.677}.
 \end{aligned}
-$$
+```
 
 Se adopta una difusividad perpendicular adicional $\chi_0=2/3\ \mathrm{m^2/s}$ para representar transporte anómalo. Garbet et al. dan el contexto de transporte efectivo por especie [6]. El valor constante de $\chi_0$ es una elección exploratoria del proyecto. Multiplicarla por $C_V$ convierte la difusividad en conductividad:
 
-$$
+```math
 k_\parallel=k_{\parallel,e}+k_{\parallel,i},\qquad
 k_\perp=k_{\perp,e}+k_{\perp,i}+3nk_B\chi_0 .
-$$
+```
 
 ![Direcciones de conducción paralela y perpendicular al campo](figuras/transporte.svg)
 
@@ -305,14 +305,14 @@ $$
 
 Sea $\mathbf b=\mathbf B/B$ y $\Delta k=k_\parallel-k_\perp$. La ley tridimensional de Fourier es $\mathbf q=-\mathbf K\nabla T$, con $\mathbf K=k_\perp\mathbf I+\Delta k\,\mathbf b\mathbf b^{\mathsf T}$. Como $\partial_\phi T=0$, para la ecuación térmica se usan el bloque poloidal y las componentes $(q_R,q_Z)$:
 
-$$
+```math
 \mathbf K_{RZ}=
 \begin{pmatrix}
 k_\perp+\Delta k\,B_R^2/B^2 & \Delta k\,B_RB_Z/B^2\\
 \Delta k\,B_RB_Z/B^2 & k_\perp+\Delta k\,B_Z^2/B^2
 \end{pmatrix},\qquad
 \mathbf q_p=-\mathbf K_{RZ}\nabla_{RZ}T .
-$$
+```
 
 Aunque la temperatura se calcula en el plano $R,Z$, las líneas de campo también recorren el tokamak en la dirección toroidal. Para saber qué parte del transporte paralelo ocurre dentro del corte, hay que conocer la inclinación de la línea completa. Por eso los cocientes de la matriz usan $B=\sqrt{B_R^2+B_Z^2+B_\phi^2}$. En la LCFS, lejos del punto X, el campo es tangente a la superficie. Allí el calor conducido en dirección paralela al campo circula a lo largo de la LCFS, y la componente normal del flujo depende de la conductividad perpendicular.
 
@@ -322,30 +322,30 @@ Las conductividades de Braginskii se calculan con la densidad, la temperatura y 
 
 Se multiplica la ecuación fuerte por una prueba $v(R,Z)$ y se integra en el volumen confinado. Escribiendo $\nabla_{\mathrm{axi}}\cdot\mathbf q_p=R^{-1}\partial_R(Rq_R)+\partial_Zq_Z$, se obtiene
 
-$$
+```math
 \int_{\Omega_p} C_V\partial_tT\,v\,dV+
 \int_{\Omega_p}v\,\nabla_{\mathrm{axi}}\cdot\mathbf q_p\,dV
 =\int_{\Omega_p}S_Cv\,dV .
-$$
+```
 
 La integración por partes da
 
-$$
+```math
 \int_{\Omega_p}v\,\nabla_{\mathrm{axi}}\cdot\mathbf q_p\,dV
 =\int_{\Gamma_c}v\,\mathbf q_p\cdot\mathbf n_p\,dA
 -\int_{\Omega_p}\mathbf q_p\cdot\nabla v\,dV .
-$$
+```
 
 En el volumen se sustituye Fourier. En la frontera se usa la única condición térmica de la LCFS, $\mathbf q_p\cdot\mathbf n_p=H_{\mathrm{ref}}g_cT_c$, con $T_c$ la traza de $T$ y los parámetros definidos en la sección 7.1. La forma débil resultante es
 
-$$
+```math
 \begin{aligned}
 \int_{\Omega_p}3nk_B\partial_tT\,v\,dV
 &+\int_{\Omega_p}(\mathbf K_{RZ}\nabla T)\cdot\nabla v\,dV\\
 &+\int_{\Gamma_c}H_{\mathrm{ref}}g_cT_c\,v\,dA
 =\int_{\Omega_p}(S_{\mathrm{ohm}}+S_{\mathrm{ECRH}}-S_{\mathrm{br}})v\,dV .
 \end{aligned}
-$$
+```
 
 La integral Robin es positiva a la izquierda para una prueba positiva y flujo saliente. Ella contabiliza toda la pérdida por cruce de la LCFS. El perfil $T_0$ fija el valor inicial, aunque su derivada normal inicial pueda diferir de la impuesta por la Robin. El flujo que se entrega al reparto del SOL es el de la condición de frontera ensamblada.
 
@@ -361,27 +361,27 @@ La figura 3 distingue las dos entradas de energía de las dos salidas. La emisi�
 
 Se usa la disipación de Joule de una corriente inductiva equivalente paralela a $\mathbf B$. En el plasma, Grad–Shafranov aporta $J_\phi$ y las componentes poloidales se calculan como $(J_R,J_Z)=(F'/\mu_0)(B_R,B_Z)$, con $F'=(FF')/F$. Sobre cada contorno cerrado regular $\mathcal C_s$ se define el promedio de una magnitud $X$ por volumen de una capa delgada entre superficies:
 
-$$
+```math
 \langle X\rangle_s=
 \frac{\displaystyle\oint_{\mathcal C_s}X\,R\,d\ell/\lvert\nabla s\rvert}
 {\displaystyle\oint_{\mathcal C_s}R\,d\ell/\lvert\nabla s\rvert}.
-$$
+```
 
 Para calcular el calentamiento óhmico, el proyecto aproxima la corriente inducida sobre cada superficie mediante un campo de la forma $\mathbf J_{\mathrm{ohm}}=C(s)\mathbf B$. Así, la corriente equivalente sigue la dirección del campo magnético. Se elige el factor $C(s)$ de modo que el promedio de $\mathbf J_{\mathrm{ohm}}\cdot\mathbf B$ coincida con el que se obtiene de la corriente del equilibrio, $\langle\mathbf J\cdot\mathbf B\rangle_s$:
 
-$$
+```math
 C(s)=\frac{\langle\mathbf J\cdot\mathbf B\rangle_s}{\langle B^2\rangle_s}
 =\frac{F'}{\mu_0}+\frac{Fp'}{\langle B^2\rangle_s},\qquad
 \mathbf J_{\mathrm{ohm}}=C(s)\mathbf B .
-$$
+```
 
 Se obtiene $C(s)$ una vez del equilibrio, tomando los límites de eje y separatriz desde contornos interiores regulares. La resistividad paralela usa el mismo $\tau_e$ de la sección 5.2 [4, §2]:
 
-$$
+```math
 \eta_\parallel=\frac{0.51m_e}{ne^2\tau_e},\qquad
 S_{\mathrm{ohm}}(R,Z,t)=\eta_\parallel(n,T)\,C(s)^2B^2,\qquad
 P_{\mathrm{ohm}}(t)=\int_{\Omega_p}S_{\mathrm{ohm}}\,dV .
-$$
+```
 
 $\eta_\parallel$ está en $\Omega\,\mathrm m$. La corriente proyectada permanece fija y la resistividad cambia con $T$. La proyección aproxima la corriente inductiva bajo la hipótesis de contribución paralela no inductiva pequeña. La potencia resultante cuenta como trabajo eléctrico externo implícito en el balance.
 
@@ -391,18 +391,18 @@ El ECRH entrega $P_{\mathrm{ECRH}}=20\times10^6\ \mathrm W$ absorbidos durante l
 
 Sea $\Omega(s)$ el corte encerrado por la superficie magnética $s$. El flujo toroidal atraviesa ese corte en dirección $\phi$, de modo que
 
-$$
+```math
 \Phi_{\mathrm{tor}}(s)=\int_{\Omega(s)}B_\phi\,dR\,dZ,\qquad
 \rho_{\mathrm{tor}}(s)=\sqrt{\frac{\Phi_{\mathrm{tor}}(s)}{\Phi_{\mathrm{tor}}(1)}} .
-$$
+```
 
 $\Phi_{\mathrm{tor}}$ se mide en Wb. A partir de ese flujo se obtiene la coordenada $\rho_{\mathrm{tor}}$, que vale cero en el eje magnético y uno en la LCFS. El máximo del calentamiento se ubica en la superficie con $\rho_{\mathrm{tor}}=0.4$. Para repartir los 20 MW alrededor de esa superficie se usa el perfil $g(s)$. Este perfil indica qué zonas reciben más calentamiento. Su integral sobre el volumen del plasma, $I_g$, permite convertir ese reparto en una potencia por unidad de volumen cuya integral sea exactamente 20 MW:
 
-$$
+```math
 g(s)=\exp\left[-\frac{(\rho_{\mathrm{tor}}(s)-0.4)^2}{2(0.1)^2}\right],
 \qquad I_g=\int_{\Omega_p}g(s)\,dV,\qquad
 S_{\mathrm{ECRH}}=\frac{P_{\mathrm{ECRH}}}{I_g}g(s).
-$$
+```
 
 La integral de $S_{\mathrm{ECRH}}$ vale $20\ \mathrm{MW}$ durante el calentamiento. Se usa la cuadratura volumétrica del ensamblaje para calcular $I_g$. La potencia absorbida por los electrones entra una sola vez en la ecuación de temperatura común.
 
@@ -410,11 +410,11 @@ La integral de $S_{\mathrm{ECRH}}$ vale $20\ \mathrm{MW}$ durante el calentamien
 
 Los electrones cambian de dirección al pasar cerca de los iones de deuterio y emiten parte de su energía en forma de fotones. Esta pérdida se llama radiación de frenado o *bremsstrahlung*. Se supone que los fotones atraviesan el plasma con una reabsorción despreciable. Con $n$ en $\mathrm{m^{-3}}$ y $t_{\mathrm{eV}}$ definido en la sección 5.2, la potencia emitida por unidad de volumen se calcula como [5, p. 58, ec. 30]
 
-$$
+```math
 S_{\mathrm{br}}=1.69\times10^{-38}n^2\sqrt{t_{\mathrm{eV}}}
 \quad[\mathrm{W/m^3}],\qquad
 P_{\mathrm{br}}(t)=\int_{\Omega_p}S_{\mathrm{br}}\,dV .
-$$
+```
 
 $S_{\mathrm{br}}$ es emisión positiva y por ello se resta del plasma. El reparto radiativo usa exactamente esa potencia integrada. La composición y las fuentes del caso base excluyen potencia alfa, calentamiento por fusión y radiación de impurezas.
 
@@ -424,7 +424,7 @@ $S_{\mathrm{br}}$ es emisión positiva y por ello se resta del plasma. El repart
 
 Horáček et al. reportan $P_{\mathrm{SOL,ref}}=18\ \mathrm{MW}$ y $A_{\mathrm{LCFS,ref}}=557\ \mathrm{m^2}$ para el mismo escenario ITER L-mode de 12 MA [8, tabla 1]. Del estudio se toma la densidad media de potencia. Del proyecto se toma una temperatura de referencia de borde equivalente a $200\ \mathrm{eV}$. Así se define la conductancia efectiva
 
-$$
+```math
 \begin{aligned}
 q''_{\mathrm{ref}}&=\frac{18\times10^6}{557}
 =32315.98\ \mathrm{W/m^2},\\
@@ -433,26 +433,26 @@ T_{\mathrm{ref}}&=\frac{200(1.602176634\times10^{-19}\ \mathrm J)}{k_B}
 H_{\mathrm{ref}}&=\frac{q''_{\mathrm{ref}}}{T_{\mathrm{ref}}}
 \simeq0.01392388\ \mathrm{W/(m^2\,K)} .
 \end{aligned}
-$$
+```
 
 El proyecto supone que el flujo de calor que sale por cada punto de la LCFS es proporcional a la temperatura del plasma en ese punto. También permite que dos puntos a la misma temperatura pierdan distintas cantidades de calor por unidad de área. Esa variación a lo largo del borde se representa con el factor $g_c$.
 
 Para calcularlo, se traza en el corte $R,Z$ una horizontal a la altura $Z_a$ del eje magnético. Se toma el punto donde esa horizontal corta la LCFS por el lado de mayor radio. Ese punto es $u_0=(R_u^0,Z_a)$, con $R_u^0>R_a$. Allí se calcula $D_u=\lvert\partial_R\psi(u_0)\rvert>0$, que sirve de referencia para comparar cuánto varía $\psi$ en los demás puntos del borde. El área $A_c$ se obtiene al girar la LCFS del equilibrio calculado:
 
-$$
+```math
 A_c=\int_{\Gamma_c}dA,\qquad
 \mu_\psi=\frac{\lvert\nabla\psi\rvert}{D_u},\qquad
 \bar\mu=\frac{1}{A_c}\int_{\Gamma_c}\mu_\psi\,dA,\qquad
 g_c=\frac{\mu_\psi}{\bar\mu}.
-$$
+```
 
 $g_c$ es adimensional, tiene promedio superficial uno y permanece fijo. En cada instante se usa la temperatura absoluta calculada en el borde, $T_c=T|_{\Gamma_c}$:
 
-$$
+```math
 q''_{\mathrm{sep}}=\mathbf q_p\cdot\mathbf n_p
 =H_{\mathrm{ref}}g_cT_c,\qquad
 P_{\mathrm{SOL}}(t)=H_{\mathrm{ref}}\int_{\Gamma_c}g_c T_c\,dA .
-$$
+```
 
 Al inicio, todo el borde tiene la temperatura de referencia. Como el promedio de $g_c$ sobre la LCFS vale uno, la potencia inicial es $P_{\mathrm{SOL}}(0^+)=q''_{\mathrm{ref}}A_c$. Aquí hay dos áreas con funciones distintas. Los $557\ \mathrm{m^2}$ del estudio de Horáček se usaron para obtener $q''_{\mathrm{ref}}$ [8, tabla 1]. Para calcular cuántos Watts salen de nuestro plasma se usa el área $A_c$ de nuestro equilibrio. Durante el transitorio se integra el flujo usando la temperatura que alcanza cada punto del borde en ese instante.
 
@@ -468,10 +468,10 @@ En el SOL (*scrape-off layer*) se sigue el recorrido de la potencia hasta las su
 
 Para seguir una línea abierta, se parte del cruce exterior $u_0$ definido en la sección 7.1 y se avanza una distancia horizontal $r$ hacia radios mayores. El punto de partida queda en $(R_u^0+r,Z_a)$. Se consideran las distancias $r>0$ del intervalo $\mathcal I$ que comienza junto a la separatriz y pertenece al SOL común. En ese intervalo, el flujo de lanzamiento $\psi_u(r)=\psi(R_u^0+r,Z_a)$ varía de forma monótona, de modo que cada valor de $r$ identifica una línea. Desde el mismo punto se sigue la línea primero en un sentido del campo y luego en el contrario. El signo $\epsilon=\pm1$ distingue los dos recorridos:
 
-$$
+```math
 \frac{d(R,Z)}{d\ell_p}
 =\epsilon\frac{(B_R,B_Z)}{B_p},\qquad B_p=\sqrt{B_R^2+B_Z^2}.
-$$
+```
 
 $\ell_p$ mide la distancia recorrida sobre la línea dibujada en el corte $R,Z$. En cada sentido se sigue la línea hasta que toca por primera vez una superficie material o atraviesa una abertura física de la cámara. La posición de llegada se guarda como $\mathbf y_\epsilon(r)$. Para localizar dónde llega la separatriz al material, se repite el trazado desde puntos cada vez más cercanos a ella. La posición a la que se acercan los impactos cuando $r\to0^+$ se llama *strike point*.
 
@@ -479,19 +479,19 @@ En la geometría del proyecto, el contorno material no tiene aberturas. Si una t
 
 Las bandas más próximas a la separatriz reciben mayor flujo de calor paralelo. En el plano de lanzamiento, el modelo hace disminuir ese flujo como $e^{-r/\lambda_q}$ hacia radios mayores. La distancia $\lambda_q=0.003\ \mathrm m$ se toma de la estimación de Horáček et al. para el régimen L-mode [8]. Al avanzar esos 3 mm, el flujo paralelo cae a $1/e$ de su valor de referencia. El proyecto usa este perfil de un solo lado y toma $S=0$, de modo que no añade un ensanchamiento hacia la región de flujo privado. El área perpendicular al campo de una banda radial es $J_u(r)\,dr$. Con $R_u=R_u^0+r$ y $B_u$ la magnitud del campo total en el lanzamiento,
 
-$$
+```math
 J_u(r)=2\pi R_u\frac{\lvert B_{Z,u}\rvert}{B_u},\qquad
 \mathcal N=\int_{\mathcal I}J_u(r)e^{-r/\lambda_q}\,dr,\qquad
 \rho_q(r)=\frac{J_u(r)e^{-r/\lambda_q}}{\mathcal N}.
-$$
+```
 
 $J_u$ está en m, $\mathcal N$ en $\mathrm{m^2}$ y $\rho_q$ en $\mathrm{m^{-1}}$. La integral de $\rho_q$ vale uno. El reparto 50/50 se aplica a cada banda radial:
 
-$$
+```math
 dP_\epsilon(r,t)=\frac{P_{\mathrm{SOL}}(t)}{2}\rho_q(r)\,dr,\qquad
 f_j=\frac12\sum_{\epsilon=\pm1}\int_{\mathcal I}\rho_q(r)H_{\epsilon,j}(r)\,dr,\qquad
 P_{\mathrm b,j}=f_jP_{\mathrm{SOL}} .
-$$
+```
 
 $H_{\epsilon,j}$ vale uno si el primer destino pertenece a $j$ y cero en otro caso. La suma sobre todos los destinos da $\sum_j f_j=1$. Las fracciones se obtienen del campo y la geometría del caso. Se garantiza igualdad entre las potencias de los dos blancos si cada banda llega una vez a cada blanco. Otras conexiones pueden depositar energía en la pared, el domo o los conectores.
 
@@ -499,18 +499,18 @@ $H_{\epsilon,j}$ vale uno si el primer destino pertenece a $j$ y cero en otro ca
 
 Para una cara o subcara $E$ de un receptor, la definición conservativa de la huella es
 
-$$
+```math
 P_{\mathrm b,E}=\int_E q''_{\mathrm b,j}\,dA
 =\frac{P_{\mathrm{SOL}}(t)}{2}
 \sum_{\epsilon=\pm1}
 \int_{\{r\in\mathcal I:\,\mathbf y_\epsilon(r)\in E\}}\rho_q(r)\,dr .
-$$
+```
 
 El flujo medio en esa cara es $P_{\mathrm b,E}/A_E$, con $A_E=\int_E2\pi R\,d\ell$. La expresión integral admite varios intervalos de lanzamiento que impacten la misma cara. Una banda deposita su potencia una vez en cada dirección.
 
 Donde el mapeo es regular, sea $\ell$ la coordenada de arco sobre el receptor. Conservar el flujo magnético elemental permite calcular la expansión y la densidad puntual:
 
-$$
+```math
 \begin{aligned}
 f_x&=\left|\frac{d\ell}{dr}\right|
 =\frac{\lvert d\psi_u/dr\rvert}{\lvert\partial_\ell\psi\rvert}
@@ -521,7 +521,7 @@ q''_{\mathrm b,j}(\ell,t)
 \sum_{\epsilon,r:\,\mathbf y_\epsilon(r)=\mathbf y(\ell)}
 \frac{\rho_q(r)}{2\pi R_j}\left|\frac{dr}{d\ell}\right| .
 \end{aligned}
-$$
+```
 
 Tomemos dos líneas que salen de los bordes de una misma banda de lanzamiento. Si llegan al divertor muy separadas, la potencia de esa banda se reparte sobre una superficie mayor. Si llegan muy juntas, la misma potencia se concentra en una superficie menor y aumenta el flujo en $\mathrm{W/m^2}$. Por eso los 3 mm de $\lambda_q$ en el lanzamiento no fijan directamente la anchura de la huella sobre el blanco. La ecuación anterior ya tiene en cuenta la separación de los impactos y la inclinación con que llega el campo al material.
 
@@ -529,21 +529,21 @@ Cuando una línea roza la superficie, llega a un vértice o cambia de receptor a
 
 **Carga ponderada.** Para una función de prueba $v_j$ del sólido, la expresión anterior se generaliza ponderando cada impacto por el valor de la prueba en el punto de llegada:
 
-$$
+```math
 L_{\mathrm b,j}(v_j)=
 \frac{P_{\mathrm{SOL}}(t)}{2}
 \sum_{\epsilon=\pm1}
 \int_{\{r:\,\mathbf y_\epsilon(r)\in\Gamma_{\mathrm{exp},j}\}}
 \rho_q(r)\,v_j(\mathbf y_\epsilon(r))\,dr .
-$$
+```
 
 Si la superficie geométrica y la malla térmica son distintas, se evalúa $v_j$ en el punto correspondiente de la cara térmica. Si se transfieren Watts por faceta y se aproxima el flujo como constante en cada faceta receptora $E$, la carga discreta correspondiente es
 
-$$
+```math
 L_{\mathrm b,j}^{\mathrm{fac}}(v_j)=
 \sum_{E\subset\Gamma_{\mathrm{exp},j}}
 \frac{P_{\mathrm b,E}}{A_E^{\mathrm{malla}}}\int_E v_j\,dA .
-$$
+```
 
 La primera expresión conserva la distribución de impactos al ponderarla. La segunda conserva los Watts por faceta con la resolución espacial elegida. Para $v_j=1$ ambas recuperan la potencia entregada al receptor.
 
@@ -562,21 +562,21 @@ Para dos vértices consecutivos del CSV con coordenadas $(R_i,Z_i)$ y $(R_{i+1},
 
 La radiación emitida por el plasma se distribuye uniformemente por área expuesta, con absorción efectiva unitaria. Esta hipótesis geométrica del proyecto prescinde de factores de vista, reflexiones y transporte espectral. Para áreas materiales $A_j$ y área de bocas físicas $A_{\mathrm{bocas}}$,
 
-$$
+```math
 A_{\mathrm{rad}}=\sum_{\mathrm{materiales}}A_j+A_{\mathrm{bocas}},\qquad
 q''_{\mathrm{rad},j}=\frac{P_{\mathrm{br}}}{A_{\mathrm{rad}}},\qquad
 P_{\mathrm{rad},j}=\frac{A_j}{A_{\mathrm{rad}}}P_{\mathrm{br}},\qquad
 P_{\mathrm{rad,esc}}=\frac{A_{\mathrm{bocas}}}{A_{\mathrm{rad}}}P_{\mathrm{br}} .
-$$
+```
 
 Con todas las aristas originales expuestas y $A_{\mathrm{bocas}}=0$, el área receptora es $854.103324\ \mathrm{m^2}$. Los conectores absorben y contabilizan por separado sus Watts magnéticos y radiativos. Sus temperaturas quedan fuera del cálculo. El área receptora material y el área $A_c$ de la LCFS tienen funciones distintas.
 
 La carga superficial total sobre un sólido es $q''_{\mathrm{in},j}=q''_{\mathrm b,j}+q''_{\mathrm{rad},j}$. Para una función de forma nodal $N_a$, la componente del vector de cargas es
 
-$$
+```math
 F_{a,j}=L_{\mathrm b,j}(N_a)
 +\int_{\Gamma_{\mathrm{exp},j}}q''_{\mathrm{rad},j}N_a\,dA .
-$$
+```
 
 Si se remalla la cara, también se transfieren los Watts radiativos de cada parche a su correspondiente área de malla. La suma de las componentes nodales recupera la potencia incidente cuando las funciones de forma satisfacen $\sum_aN_a=1$.
 
@@ -629,21 +629,21 @@ Las temperaturas que reciben las funciones están en K, $k$ en $\mathrm{W/(m\,K)
 
 **Tungsteno.**
 
-$$
+```math
 \begin{aligned}
 k_{\mathrm W}(T)&=241-0.290T+2.54\times10^{-4}T^2
 -1.03\times10^{-7}T^3+1.52\times10^{-11}T^4,\\
 c_{p,\mathrm W}(T)&=116+0.0711T-6.58\times10^{-5}T^2
 +3.24\times10^{-8}T^3-5.45\times10^{-12}T^4 .
 \end{aligned}
-$$
+```
 
 **Cobre.** En las entradas activas de [15] el ajuste lineal corresponde a conductividad y el cúbico a capacidad calorífica:
 
-$$
+```math
 k_{\mathrm{Cu}}(T)=421-0.0685T,\qquad
 c_{p,\mathrm{Cu}}(T)=316+0.318T-3.49\times10^{-4}T^2+1.66\times10^{-7}T^3 .
-$$
+```
 
 **CuCrZr.** Se usa $k_{\mathrm{CuCrZr}}(T)=387-0.128T$ y $c_{p,\mathrm{CuCrZr}}(T)=390$.
 
@@ -678,12 +678,12 @@ El agua se mantiene a $343.15\ \mathrm K$ y $4\ \mathrm{MPa}$ en todos los compo
 
 Para los canales NHF se usa Dittus–Boelter con agua calentándose, bajo la aproximación de flujo turbulento desarrollado [19, §8–6]. Las velocidades representativas son 1.4 m/s delante y 0.7 m/s detrás [11]. Con velocidad $v_f$ y diámetro hidráulico $D_h$,
 
-$$
+```math
 \mathrm{Re}=\frac{\rho_f v_fD_h}{\mu_f},\qquad
 \mathrm{Pr}=\frac{\mu_fc_{p,f}}{k_f},\qquad
 \mathrm{Nu}_{\mathrm{base}}=0.023\,\mathrm{Re}^{0.8}\mathrm{Pr}^{0.4},\qquad
 h_{\mathrm{BC}}=\frac{k_f\mathrm{Nu}_{\mathrm{base}}}{D_h}.
-$$
+```
 
 Se usa $D_h=0.010\ \mathrm m$ delante y $0.022\ \mathrm m$ detrás. Resultan aproximadamente $9323$ y $4573\ \mathrm{W/(m^2\,K)}$, respectivamente. El coeficiente se integra directamente sobre la superficie mojada generada por el contorno del orificio. La longitud de desarrollo hidráulico se entiende a lo largo de la dirección real del flujo.
 
@@ -691,12 +691,12 @@ Se usa $D_h=0.010\ \mathrm m$ delante y $0.022\ \mathrm m$ detrás. Resultan apr
 
 Los blancos usan $D_i=0.012\ \mathrm m$, velocidad de agua de $10.4\ \mathrm{m/s}$ en IVT y $8.4\ \mathrm{m/s}$ en OVT [13], [14]. La razón de torsión es $Y=L_{180}/D_i=2$, donde $L_{180}$ es la longitud axial para media vuelta. El multiplicador de cinta sigue la correlación recogida por El-Morshedy [13]. Para la reducción se adopta el diámetro interior nominal $D_i$ tanto en $\mathrm{Re}$ como en la conversión de Nusselt a $h$:
 
-$$
+```math
 \mathrm{Nu}_{\mathrm{cinta}}=\mathrm{Nu}_{\mathrm{base}}(2.26Y^{-0.248}),\qquad
 h_{\mathrm{mojado}}=\frac{k_f\mathrm{Nu}_{\mathrm{cinta}}}{D_i},\qquad
 h_A=\frac{\pi D_i}{b_{\mathrm{exp}}}h_{\mathrm{mojado}},\qquad
 b_{\mathrm{exp}}=0.028\ \mathrm m .
-$$
+```
 
 El coeficiente $h_{\mathrm{mojado}}$ describe el intercambio de calor por cada metro cuadrado de pared interior del tubo en contacto con el agua. Para trasladarlo a la banda de la figura 5a, tomemos un tramo de longitud $L$. En ese tramo, el agua moja un área $\pi D_iL$ y la cara expuesta al plasma tiene un área $b_{\mathrm{exp}}L$. Al dividir las dos áreas se cancela $L$ y queda el factor $\pi D_i/b_{\mathrm{exp}}$. Así se obtiene $h_A$, que expresa el mismo intercambio por metro cuadrado de cara expuesta.
 
@@ -711,25 +711,25 @@ El efecto de la cinta sobre el intercambio ya está incluido en $\mathrm{Nu}_{\m
 
 Para calcular la refrigeración del domo se usa como referencia el prototipo estudiado por Rybikov et al. [21]. El caso de referencia usa $D_h=0.016\ \mathrm m$ y $v_f=4.2\ \mathrm{m/s}$. La ley adoptada representa un canal con área de intercambio aumentada por dientes. Se evalúa con la temperatura local de la cara fría $T_w$ y la temperatura prescrita del agua $T_f$:
 
-$$
+```math
 h_0(T_w)=
 \begin{cases}
 21000, & T_w<T_f,\\[3pt]
 21000+3500\dfrac{T_w-T_f}{523.508\ \mathrm K-T_f},
 & T_f\le T_w<523.508\ \mathrm K .
 \end{cases}
-$$
+```
 
 $h_0$ está en $\mathrm{W/(m^2\,K)}$. La altura del diente es $a=0.004\ \mathrm m$, su espesor $b_d=0.003\ \mathrm m$ y el paso adoptado $P_d=0.0071\ \mathrm m$. Con la aproximación de aleta recta de longitud corregida [19],
 
-$$
+```math
 \begin{aligned}
 L_c&=a+\frac{b_d}{2}=0.0055\ \mathrm m,\qquad
 m_f=\sqrt{\frac{2h_0}{k_{\mathrm{CuCrZr}}(T_w)b_d}},\\
 \eta_f&=\frac{\tanh(m_fL_c)}{m_fL_c},\qquad
 h_A=h_0\frac{P_d-b_d+\eta_f(b_d+2a)}{P_d}.
 \end{aligned}
-$$
+```
 
 El numerador cuenta la base libre entre dientes y el perímetro efectivo del diente ponderado por la eficiencia $\eta_f$. El $h_A$ resultante está referido al área expuesta. La ley termina en el límite superior indicado. La aproximación monofásica no predice ebullición ni flujo crítico de calor.
 
@@ -737,13 +737,13 @@ El numerador cuenta la base libre entre dientes y el perímetro efectivo del die
 
 En el divertor el programa aplica convección sobre la cara fría, pero $h_A$ expresa conductancia por unidad de área expuesta. Para relacionarlas se emparejan los dos lados de cada pequeño tramo mediante una coordenada común $\xi$. Sean $\mathbf x_h(\xi)$ y $\mathbf x_f(\xi)$ sus posiciones en el corte, y $R_h,R_f$ sus radios. Entonces
 
-$$
+```math
 J_A(\xi)=\frac{dA_f}{dA_h}
 =\frac{R_f\lvert\partial_\xi\mathbf x_f\rvert}
 {R_h\lvert\partial_\xi\mathbf x_h\rvert},\qquad
 h_{\mathrm{BC}}=\frac{h_A}{J_A},\qquad
 h_{\mathrm{BC}}\,dA_f=h_A\,dA_h .
-$$
+```
 
 Para ver qué conserva esta conversión, tomemos un tramo cuya cara fría tenga el doble de área que su cara expuesta. En ese tramo $J_A=2$, por lo que sobre la cara fría se aplica $h_{\mathrm{BC}}=h_A/2$. Al multiplicar el coeficiente por el área correspondiente, ambos lados dan la misma conductancia en $\mathrm{W/K}$. Para obtener la potencia extraída se multiplica esa conductancia por la diferencia entre la temperatura de la cara fría y la del agua, $T_w-T_f$.
 
@@ -755,7 +755,7 @@ Esta conversión se hace una vez en los blancos y en el domo. En la primera pare
 
 En cada capa $i$ del sólido $j$, Fourier da $\mathbf q_i=-k_i(T_j)\nabla_{RZ}T_j$. La conservación local de energía, sin fuente volumétrica interna, conduce a [19]
 
-$$
+```math
 \begin{aligned}
 \rho_i c_{p,i}(T_j)\partial_tT_j
 &=\frac1R\partial_R\left(R k_i(T_j)\partial_RT_j\right)
@@ -763,7 +763,7 @@ $$
 &&\text{en }\Omega_{j,i},\\
 T_j(R,Z,0)&=343.15\ \mathrm K .
 \end{aligned}
-$$
+```
 
 La conductividad se mantiene dentro de la divergencia. La radiación recibida del plasma se deposita en la superficie expuesta. En cada interfaz con contacto perfecto, $T_i=T_{i+1}$ y $\mathbf q_i\cdot\mathbf n=\mathbf q_{i+1}\cdot\mathbf n$ para una normal común. El gradiente normal puede cambiar entre dos materiales con diferente $k$.
 
@@ -782,22 +782,22 @@ La carga incidente entra al sólido, de ahí el signo negativo con normal salien
 
 Se multiplica $\rho_ic_{p,i}\partial_tT_j+\nabla_{\mathrm{axi}}\cdot\mathbf q_i=0$ por una prueba $v_j$ continua en las interfaces y se integra sobre cada capa. Después de integrar la divergencia por partes,
 
-$$
+```math
 \int_{\Omega_{j,i}}\rho_i c_{p,i}\partial_tT_j\,v_j\,dV
 -\int_{\Omega_{j,i}}\mathbf q_i\cdot\nabla v_j\,dV
 +\int_{\partial\Omega_{j,i}}v_j\,\mathbf q_i\cdot\mathbf n_i\,dA=0 ,
-$$
+```
 
 donde $\mathbf n_i$ sale de la capa. Al sumar las capas, las dos normales de cada interfaz son opuestas y sus flujos se cancelan. Sustituyendo Fourier y las condiciones exteriores se obtiene
 
-$$
+```math
 \begin{aligned}
 &\sum_i\int_{\Omega_{j,i}}\rho_i c_{p,i}(T_j)\partial_tT_j\,v_j\,dV
 +\sum_i\int_{\Omega_{j,i}}k_i(T_j)\nabla T_j\cdot\nabla v_j\,dV\\
 &\quad+\int_{\Gamma_{\mathrm{agua},j}}h_{\mathrm{BC}}(T_w-T_f)v_j\,dA
 =\int_{\Gamma_{\mathrm{exp},j}}q''_{\mathrm{in},j}v_j\,dA .
 \end{aligned}
-$$
+```
 
 El miembro derecho indica cómo se reparte entre los nodos la potencia que llega a la cara expuesta. Para obtener el aporte al nodo $a$, se usa como función de prueba su función de forma $N_a$. Así, cada punto de la cara aporta al nodo según el valor de $N_a$ en ese punto. Al repetir la operación para todos los nodos y sumar los aportes de los elementos vecinos, se obtiene el sistema de ecuaciones para las temperaturas nodales del sólido. El plasma se trata de la misma manera en su propia malla. En ambos casos se usan los volúmenes y las áreas de revolución definidos en la sección 2.
 
@@ -807,25 +807,25 @@ El miembro derecho indica cómo se reparte entre los nodos la potencia que llega
 
 La prueba constante $v=1$ anula la integral de conducción interior y deja el balance de cada dominio completo. Para el plasma,
 
-$$
+```math
 U_p(t)=\int_{\Omega_p}3nk_BT\,dV,\qquad
 \frac{dU_p}{dt}=P_{\mathrm{ohm}}+P_{\mathrm{ECRH}}-P_{\mathrm{br}}-P_{\mathrm{SOL}} .
-$$
+```
 
 En los sólidos se usa energía sensible relativa a $T_f=343.15\ \mathrm K$. Con $c_p$ variable, la energía acumulada por kilogramo es la integral de la propiedad:
 
-$$
+```math
 e_i(T)=\int_{T_f}^{T}c_{p,i}(\vartheta)\,d\vartheta,\qquad
 U_j(t)=\sum_i\int_{\Omega_{j,i}}\rho_i e_i(T_j)\,dV .
-$$
+```
 
 Para el acero, la integral se evalúa por tramos en los nodos de la tabla que atraviese el intervalo de temperatura. Por la regla de la cadena, $\partial_t e_i(T_j)=c_{p,i}(T_j)\partial_tT_j$. Así, la forma débil del sólido con $v_j=1$ da
 
-$$
+```math
 P_{\mathrm{agua},j}=\int_{\Gamma_{\mathrm{agua},j}}
 h_{\mathrm{BC}}(T_w-T_f)\,dA,\qquad
 \frac{dU_j}{dt}=P_{\mathrm b,j}+P_{\mathrm{rad},j}-P_{\mathrm{agua},j}.
-$$
+```
 
 Todos los sólidos empiezan a la temperatura del agua. Por ello $P_{\mathrm{agua},j}(0)=0$, aunque la cara de tungsteno ya pueda recibir calor. Durante el calentamiento, parte de la potencia incidente se almacena. Durante el enfriamiento, el agua puede extraer más potencia que la que llega en ese instante.
 
@@ -833,33 +833,33 @@ Todos los sólidos empiezan a la temperatura del agua. Por ello $P_{\mathrm{agua
 
 Cada mecanismo tiene su propio reparto. El subíndice "otros" representa los dos conectores cortos y "esc" representa bocas físicas, con valor cero en el caso base:
 
-$$
+```math
 \begin{aligned}
 P_{\mathrm{SOL}}&=\sum_{j\in\mathcal J}P_{\mathrm b,j}
 +P_{\mathrm b,otros}+P_{\mathrm b,esc},\\
 P_{\mathrm{br}}&=\sum_{j\in\mathcal J}P_{\mathrm{rad},j}
 +P_{\mathrm{rad,otros}}+P_{\mathrm{rad,esc}} .
 \end{aligned}
-$$
+```
 
 Si el plasma pierde un Watt y ese Watt llega al IVT, aparece como una salida en el balance del plasma y como una entrada en el balance del IVT. Al sumar ambos balances, los dos términos se cancelan. Lo mismo ocurre con la potencia que llega a cualquiera de los otros tres sólidos, tanto si llega a través del SOL como si llega por radiación.
 
 Los conectores también reciben calor, pero el modelo no calcula la energía que almacenan. Por eso la potencia que llega a ellos cuenta como una salida del conjunto formado por el plasma y los cuatro sólidos. Esa potencia, más la que pudiera salir por aberturas físicas, se agrupa en $P_{\mathrm{ext}}=P_{\mathrm b,otros}+P_{\mathrm b,esc}+P_{\mathrm{rad,otros}}+P_{\mathrm{rad,esc}}$. En la geometría usada aquí, los términos de escape por aberturas valen cero. Con esta definición, el balance global queda
 
-$$
+```math
 \frac{d}{dt}\left(U_p+\sum_{j\in\mathcal J}U_j\right)
 =P_{\mathrm{ohm}}+P_{\mathrm{ECRH}}
 -\sum_{j\in\mathcal J}P_{\mathrm{agua},j}-P_{\mathrm{ext}} .
-$$
+```
 
 Para comparar con resultados discretos se integra la igualdad en el intervalo $[t_m,t_{m+1}]$. Si $U=U_p+\sum_jU_j$, el residuo en J es
 
-$$
+```math
 \mathcal R_m=U(t_{m+1})-U(t_m)-
 \int_{t_m}^{t_{m+1}}
 \left(P_{\mathrm{ohm}}+P_{\mathrm{ECRH}}
 -\sum_jP_{\mathrm{agua},j}-P_{\mathrm{ext}}\right)dt .
-$$
+```
 
 La pérdida del plasma y la entrega a los receptores se contabilizan con potencias del mismo estado o etapa temporal. La igualdad continua admite distintos integradores. Con $c_p(T)$ variable, el incremento de energía sensible se calcula a partir de $e_i(T)$; aproximarlo por un solo valor de $c_p$ multiplicado por $\Delta T$ introduce un error temporal.
 
@@ -885,10 +885,10 @@ El equilibrio permanece congelado aunque cambie la presión térmica. El SOL red
 - Medidas y coordenada de flujo: $dS_p=dR\,dZ$, $dV=2\pi R\,dS_p$, $dA=2\pi R\,d\ell$, $s=(\psi-\psi_a)/(\psi_{\mathrm{sep}}-\psi_a)$.
 - Forma fuerte y corriente toroidal:
 
-$$
+```math
 \begin{aligned}
--\Delta^*\psi&=\mu_0RJ_\phi,\qquad
-\Delta^*\psi=\partial_{RR}\psi-\frac{1}{R}\partial_R\psi+\partial_{ZZ}\psi,\\
+-\Delta^{*}\psi&=\mu_0RJ_\phi,\qquad
+\Delta^{*}\psi=\partial_{RR}\psi-\frac{1}{R}\partial_R\psi+\partial_{ZZ}\psi,\\
 J_\phi&=
 \begin{cases}
 Rp'(\psi)+FF'(\psi)/(\mu_0R), & \Omega_p,\\
@@ -898,55 +898,55 @@ I_{\mathrm{eff},i}/A_{c,i}, & \Omega_{c,i},\\
 I_{\mathrm{eff},i}&=N_{\mathrm{eff},i}I_{\mathrm{vuelta},i},\qquad
 A_{c,i}=\int_{\Omega_{c,i}}dS_p,\qquad I_p=\int_{\Omega_p}J_{\phi,p}\,dS_p .
 \end{aligned}
-$$
+```
 
 - Campo y corriente poloidal:
 
-$$
+```math
 \begin{aligned}
 B_R&=-\frac{\partial_Z\psi}{R},\qquad B_Z=\frac{\partial_R\psi}{R},\\
 B_\phi&=\frac{F(\psi)}{R}\quad\text{en el plasma},\qquad
 B_{\phi,\mathrm{ext}}=\frac{F(1)}{R},\qquad F(1)=32.8600006\ \mathrm{T\,m},\\
 (J_R,J_Z)&=\frac{F'}{\mu_0}(B_R,B_Z)\quad\text{en el plasma},\qquad F'=\frac{FF'}{F}.
 \end{aligned}
-$$
+```
 
 - Eje y frontera exterior: $\psi(0,Z)=0$, $\psi=O(R^2)$ al aproximarse al eje. Para $x\in\Gamma_{\mathrm{ext}}$:
 
-$$
+```math
 \begin{aligned}
 m&=\frac{4RR'}{(R+R')^2+(Z-Z')^2},\\
 G(x,x')&=\frac{\mu_0\sqrt{RR'}}{2\pi\sqrt m}\big[(2-m)K(m)-2E(m)\big],\\
 \psi(x)&=\int_{\Omega_p}G(x,x')J_{\phi,p}(x')\,dS_p'
 +\sum_i\int_{\Omega_{c,i}}G(x,x')J_{\phi,c,i}(x')\,dS_p'.
 \end{aligned}
-$$
+```
 
 - Forma débil, con $v=0$ en las fronteras de valor prescrito:
 
-$$
+```math
 \int_{\Omega_m}\frac{\nabla\psi\cdot\nabla v}{R}\,dS_p
 =\mu_0\int_{\Omega_p}J_{\phi,p}v\,dS_p
 +\mu_0\sum_i\int_{\Omega_{c,i}}J_{\phi,c,i}v\,dS_p .
-$$
+```
 
 #### Transporte térmico del plasma
 
 - Estado inicial y energía: $n_e=n_i=n(s)$, $T_e=T_i=T$, $T_0=p/(2nk_B)$, $u_p=3nk_BT$, $u_p(0)=3p/2$, $C_V=3nk_B$.
 - Colisiones: $\theta=k_BT$, $t_{\mathrm{eV}}=\theta/(1.602176634\times10^{-19}\ \mathrm J)$, $N=n/(10^6\ \mathrm{m^{-3}})$, $g=e^2/(4\pi\varepsilon_0)$.
 
-$$
+```math
 \begin{aligned}
 \ell_{ei}&=24-\ln(\sqrt N/t_{\mathrm{eV}}),&
 \ell_{ii}&=23-\ln(\sqrt{2N}\,t_{\mathrm{eV}}^{-3/2}),\\
 \tau_e&=\frac{3\sqrt{m_e}\,\theta^{3/2}}{4\sqrt{2\pi}\,n g^2\ell_{ei}},&
 \tau_i&=\frac{3\sqrt{m_D}\,\theta^{3/2}}{4\sqrt{\pi}\,n g^2\ell_{ii}}.
 \end{aligned}
-$$
+```
 
 - Conductividades: $B=\sqrt{B_R^2+B_\phi^2+B_Z^2}$, $x_a=eB\tau_a/m_a$, $A_a=nk_B\theta\tau_a/m_a$, $m_i=m_D$.
 
-$$
+```math
 \begin{aligned}
 k_{\parallel,e}&=3.1616A_e,&
 k_{\perp,e}&=A_e\frac{4.664x_e^2+11.92}{x_e^4+14.79x_e^2+3.7703},\\
@@ -956,11 +956,11 @@ k_\parallel&=k_{\parallel,e}+k_{\parallel,i},&
 k_\perp&=k_{\perp,e}+k_{\perp,i}+C_V\chi_0,\qquad
 \chi_0=\tfrac23\ \mathrm{m^2/s}.
 \end{aligned}
-$$
+```
 
 - Tensor y flujo: $\mathbf b=\mathbf B/B$, $\Delta k=k_\parallel-k_\perp$, $\mathbf K=k_\perp\mathbf I+\Delta k\,\mathbf b\mathbf b^{\mathsf T}$.
 
-$$
+```math
 \mathbf K_{RZ}=
 \begin{pmatrix}
 k_\perp+\Delta k\,b_R^2 & \Delta k\,b_Rb_Z\\
@@ -968,25 +968,25 @@ k_\perp+\Delta k\,b_R^2 & \Delta k\,b_Rb_Z\\
 \end{pmatrix},
 \qquad
 \mathbf q_p=-\mathbf K_{RZ}\nabla_{RZ}T .
-$$
+```
 
 - Forma fuerte: $C_V\partial_tT+R^{-1}\partial_R(Rq_R)+\partial_Zq_Z=S_C$, con $S_C=S_{\mathrm{ohm}}+S_{\mathrm{ECRH}}-S_{\mathrm{br}}$.
 - Forma débil:
 
-$$
+```math
 \begin{aligned}
 \int_{\Omega_p}C_V\partial_tT\,v\,dV
 &+\int_{\Omega_p}(\mathbf K_{RZ}\nabla T)\cdot\nabla v\,dV\\
 &+\int_{\Gamma_c}H_{\mathrm{ref}}g_cT_c v\,dA
 =\int_{\Omega_p}(S_{\mathrm{ohm}}+S_{\mathrm{ECRH}}-S_{\mathrm{br}})v\,dV .
 \end{aligned}
-$$
+```
 
 #### Fuentes y pérdidas
 
 - Calentamiento óhmico:
 
-$$
+```math
 \begin{aligned}
 \langle X\rangle_s
 &=\frac{\displaystyle\oint_{\mathcal C_s}X R\,d\ell/\lvert\nabla s\rvert}
@@ -997,18 +997,18 @@ C(s)&=\frac{\langle\mathbf J\cdot\mathbf B\rangle_s}{\langle B^2\rangle_s}
 S_{\mathrm{ohm}}=\eta_\parallel C(s)^2B^2,\qquad
 P_{\mathrm{ohm}}=\int_{\Omega_p}S_{\mathrm{ohm}}\,dV .
 \end{aligned}
-$$
+```
 
 - ECRH, con $P_{\mathrm{ECRH}}=20\ \mathrm{MW}$ durante la fase activa:
 
-$$
+```math
 \begin{aligned}
 \Phi_{\mathrm{tor}}(s)&=\int_{\Omega(s)}B_\phi\,dS_p,\qquad
 \rho_{\mathrm{tor}}(s)=\sqrt{\Phi_{\mathrm{tor}}(s)/\Phi_{\mathrm{tor}}(1)},\\
 g(s)&=\exp\left[-\frac{(\rho_{\mathrm{tor}}(s)-0.4)^2}{2(0.1)^2}\right],\qquad
 S_{\mathrm{ECRH}}=\frac{P_{\mathrm{ECRH}}\,g(s)}{\int_{\Omega_p}g(s)\,dV}.
 \end{aligned}
-$$
+```
 
 - Bremsstrahlung: $S_{\mathrm{br}}=1.69\times10^{-38}n^2\sqrt{t_{\mathrm{eV}}}$ en $\mathrm{W/m^3}$, $P_{\mathrm{br}}=\int_{\Omega_p}S_{\mathrm{br}}\,dV$.
 
@@ -1016,7 +1016,7 @@ $$
 
 - Robin y potencia SOL:
 
-$$
+```math
 \begin{aligned}
 q''_{\mathrm{ref}}&=\frac{18\times10^6\ \mathrm W}{557\ \mathrm{m^2}},\qquad
 T_{\mathrm{ref}}=\frac{200\ \mathrm{eV}}{k_B},\qquad H_{\mathrm{ref}}=\frac{q''_{\mathrm{ref}}}{T_{\mathrm{ref}}},\\
@@ -1028,11 +1028,11 @@ q''_{\mathrm{sep}}&=\mathbf q_p\cdot\mathbf n_p=H_{\mathrm{ref}}g_cT_c,\qquad
 T_c=T|_{\Gamma_c},\qquad
 P_{\mathrm{SOL}}=\int_{\Gamma_c}H_{\mathrm{ref}}g_cT_c\,dA .
 \end{aligned}
-$$
+```
 
 - Bandas y primeros impactos: $R_u=R_u^0+r$, $\epsilon=\pm1$, $\lambda_q=0.003\ \mathrm m$, $S=0$.
 
-$$
+```math
 \begin{aligned}
 (R,Z)_{\ell_p=0}&=(R_u,Z_a),\qquad
 \frac{d(R,Z)}{d\ell_p}=\epsilon\frac{(B_R,B_Z)}{\sqrt{B_R^2+B_Z^2}},\\
@@ -1043,11 +1043,11 @@ dP_\epsilon&=\tfrac12P_{\mathrm{SOL}}\rho_q(r)\,dr,\qquad
 f_j=\tfrac12\sum_{\epsilon=\pm1}\int_{\mathcal I}\rho_q(r)H_{\epsilon,j}(r)\,dr,\qquad
 P_{\mathrm b,j}=f_jP_{\mathrm{SOL}} .
 \end{aligned}
-$$
+```
 
 - Huella por cara $E$, con $\mathbf y_\epsilon(r)$ el primer impacto:
 
-$$
+```math
 \begin{aligned}
 P_{\mathrm b,E}
 &=\frac{P_{\mathrm{SOL}}}{2}\sum_{\epsilon=\pm1}
@@ -1055,11 +1055,11 @@ P_{\mathrm b,E}
 A_E&=\int_E2\pi R\,d\ell,\qquad
 \overline{q''_{\mathrm b,E}}=\frac{P_{\mathrm b,E}}{A_E}.
 \end{aligned}
-$$
+```
 
 - Huella puntual donde el mapeo es regular:
 
-$$
+```math
 \begin{aligned}
 f_x&=\left|\frac{d\ell}{dr}\right|
 =\frac{R_u\lvert B_{Z,u}\rvert}{R_j\lvert\mathbf B_j\cdot\mathbf n_j\rvert},\\
@@ -1067,11 +1067,11 @@ q''_{\mathrm b,j}(\ell,t)&=\frac{P_{\mathrm{SOL}}(t)}{2}
 \sum_{\epsilon,r:\,\mathbf y_\epsilon(r)=\mathbf y(\ell)}
 \frac{\rho_q(r)}{2\pi R_j}\left|\frac{dr}{d\ell}\right|.
 \end{aligned}
-$$
+```
 
 - Radiación y flujo incidente:
 
-$$
+```math
 \begin{aligned}
 A_{\mathrm{rad}}&=\sum_{\mathrm{materiales}}A_j+A_{\mathrm{bocas}},\qquad
 q''_{\mathrm{rad},j}=\frac{P_{\mathrm{br}}}{A_{\mathrm{rad}}},\\
@@ -1079,11 +1079,11 @@ P_{\mathrm{rad},j}&=A_j q''_{\mathrm{rad},j},\qquad
 P_{\mathrm{rad,esc}}=\frac{A_{\mathrm{bocas}}}{A_{\mathrm{rad}}}P_{\mathrm{br}},\\
 q''_{\mathrm{in},j}&=q''_{\mathrm b,j}+q''_{\mathrm{rad},j}.
 \end{aligned}
-$$
+```
 
 - Carga superficial por impacto o por faceta:
 
-$$
+```math
 \begin{aligned}
 L_{\mathrm b,j}(v_j)&=\frac{P_{\mathrm{SOL}}}{2}\sum_{\epsilon=\pm1}
 \int_{\{r\in\mathcal I:\,\mathbf y_\epsilon(r)\in\Gamma_{\mathrm{exp},j}\}}
@@ -1093,13 +1093,13 @@ L_{\mathrm b,j}^{\mathrm{fac}}(v_j)&=
 \frac{P_{\mathrm b,E}}{A_E^{\mathrm{malla}}}\int_Ev_j\,dA,\\
 F_{a,j}&=L_{\mathrm b,j}(N_a)+\int_{\Gamma_{\mathrm{exp},j}}q''_{\mathrm{rad},j}N_a\,dA .
 \end{aligned}
-$$
+```
 
 #### Conducción y refrigeración de los sólidos
 
 - Fourier, forma fuerte y estado inicial:
 
-$$
+```math
 \begin{aligned}
 \mathbf q_i&=-k_i(T_j)\nabla_{RZ}T_j,\\
 \rho_ic_{p,i}(T_j)\partial_tT_j
@@ -1107,46 +1107,46 @@ $$
 +\partial_Z\!\left(k_i(T_j)\partial_ZT_j\right),\\
 T_j(R,Z,0)&=T_f=343.15\ \mathrm K .
 \end{aligned}
-$$
+```
 
 - Interfaces: $T_i=T_{i+1}$, $\mathbf q_i\cdot\mathbf n=\mathbf q_{i+1}\cdot\mathbf n$ con normal común.
 - Fronteras térmicas, con normal saliente:
 
-$$
+```math
 \mathbf q_i\cdot\mathbf n_j=
 \begin{cases}
 -q''_{\mathrm{in},j}, & \text{cara expuesta},\\
 h_{\mathrm{BC}}(T_w-T_f), & \text{canal NHF o cara fría del divertor},\\
 0, & \text{cara posterior NHF o corte exterior adiabático}.
 \end{cases}
-$$
+```
 
 - Forma débil:
 
-$$
+```math
 \begin{aligned}
 &\sum_i\int_{\Omega_{j,i}}\rho_ic_{p,i}(T_j)\partial_tT_j\,v_j\,dV
 +\sum_i\int_{\Omega_{j,i}}k_i(T_j)\nabla T_j\cdot\nabla v_j\,dV\\
 &\quad+\int_{\Gamma_{\mathrm{agua},j}}h_{\mathrm{BC}}(T_w-T_f)v_j\,dA
 =\int_{\Gamma_{\mathrm{exp},j}}q''_{\mathrm{in},j}v_j\,dA .
 \end{aligned}
-$$
+```
 
 - Convección en NHF: $\mathrm{Re}=\rho_fv_fD_h/\mu_f$, $\mathrm{Pr}=\mu_fc_{p,f}/k_f$, $\mathrm{Nu}_{\mathrm{base}}=0.023\,\mathrm{Re}^{0.8}\mathrm{Pr}^{0.4}$, $h_{\mathrm{BC}}=k_f\mathrm{Nu}_{\mathrm{base}}/D_h$.
 - Tubo con cinta en IVT y OVT, con $D_h=D_i$ en $\mathrm{Re}$:
 
-$$
+```math
 \begin{aligned}
 Y&=L_{180}/D_i=2,\qquad
 \mathrm{Nu}_{\mathrm{cinta}}=2.26Y^{-0.248}\mathrm{Nu}_{\mathrm{base}},\\
 h_{\mathrm{mojado}}&=\frac{k_f\mathrm{Nu}_{\mathrm{cinta}}}{D_i},\qquad
 h_A=\frac{\pi D_i}{b_{\mathrm{exp}}}h_{\mathrm{mojado}} .
 \end{aligned}
-$$
+```
 
 - Canal del domo, con $h_0$ en $\mathrm{W/(m^2\,K)}$ y $T_{\mathrm{sat}}=523.508\ \mathrm K$:
 
-$$
+```math
 \begin{aligned}
 h_0(T_w)&=
 \begin{cases}
@@ -1158,39 +1158,39 @@ m_f=\sqrt{\frac{2h_0}{k_{\mathrm{CuCrZr}}(T_w)b_d}},\qquad
 \eta_f=\frac{\tanh(m_fL_c)}{m_fL_c},\\
 h_A&=h_0\frac{P_d-b_d+\eta_f(b_d+2a)}{P_d}.
 \end{aligned}
-$$
+```
 
 - Cara fría de IVT, domo y OVT:
 
-$$
+```math
 J_A=\frac{dA_f}{dA_h}
 =\frac{R_f\lvert\partial_\xi\mathbf x_f\rvert}{R_h\lvert\partial_\xi\mathbf x_h\rvert},
 \qquad h_{\mathrm{BC}}=\frac{h_A}{J_A}.
-$$
+```
 
 #### Balance de energía
 
 - Plasma:
 
-$$
+```math
 U_p=\int_{\Omega_p}3nk_BT\,dV,\qquad
 \frac{dU_p}{dt}=P_{\mathrm{ohm}}+P_{\mathrm{ECRH}}-P_{\mathrm{br}}-P_{\mathrm{SOL}} .
-$$
+```
 
 - Cada sólido $j$:
 
-$$
+```math
 \begin{aligned}
 e_i(T)&=\int_{T_f}^Tc_{p,i}(\vartheta)\,d\vartheta,\qquad
 U_j=\sum_i\int_{\Omega_{j,i}}\rho_i e_i(T_j)\,dV,\\
 P_{\mathrm{agua},j}&=\int_{\Gamma_{\mathrm{agua},j}}h_{\mathrm{BC}}(T_w-T_f)\,dA,\qquad
 \frac{dU_j}{dt}=P_{\mathrm b,j}+P_{\mathrm{rad},j}-P_{\mathrm{agua},j}.
 \end{aligned}
-$$
+```
 
 - Conjunto del plasma y los cuatro sólidos:
 
-$$
+```math
 \begin{aligned}
 P_{\mathrm{ext}}&=P_{\mathrm b,otros}+P_{\mathrm b,esc}
 +P_{\mathrm{rad,otros}}+P_{\mathrm{rad,esc}},\\
@@ -1198,7 +1198,7 @@ U&=U_p+\sum_{j\in\mathcal J}U_j,\\
 \frac{dU}{dt}&=P_{\mathrm{ohm}}+P_{\mathrm{ECRH}}
 -\sum_{j\in\mathcal J}P_{\mathrm{agua},j}-P_{\mathrm{ext}} .
 \end{aligned}
-$$
+```
 
 ## 14. Referencias
 
